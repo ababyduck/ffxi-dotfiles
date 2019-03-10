@@ -1,0 +1,243 @@
+<ashitacast>
+
+    <settings>
+        <!--Determines if your idlegear will be parsed when you gain/lose a buff. Default: TRUE -->
+        <buffupdate>true</buffupdate>
+        <!--Determines if your idlegear will be parsed when you change status(stand/rest/engage/etc).  Default: TRUE -->
+        <statusupdate>true</statuspdate>
+        <!--Determines if your idlegear will be parsed when your HP % changes.  Default: TRUE -->
+        <hpupdate>false</hpupdate>
+        <!--Determines if your idlegear will be parsed on outgoing status updates(roughly every 350ms).  Default: TRUE-->
+        <autoupdate>true</autoupdate>
+    </settings>
+
+    <init>
+        <command>/macro book 5</command>
+        <command delay="1000">/macro set 1</command>
+    </init>
+    
+    <sets>
+        <set name="Idle">
+            <main>Earth Staff</main>
+            <sub>Raptor Strap +1</sub>
+            <ammo>Phtm. Tathlum</ammo>
+            <head>Austere Hat</head>
+            <body>Yinyang Robe</body>
+            <hands>Carbuncle Mitts</hands>
+            <legs>Evoker's Spats</legs>
+            <feet>Rostrum Pumps</feet>
+            <neck>Holy Phial</neck>
+            <waist>Mohbwa Sash +1</waist>
+            <ear1>Melody Earring +1</ear1>
+            <ear2>Melody Earring +1</ear2>
+            <ring1>Evoker's Ring</ring1>
+            <ring2>Serket Ring</ring2>
+            <back>Blue Cape</back>
+        </set>
+
+        <set name="Resting" baseset="Idle">
+            <main>Dark Staff</main>
+            <body>Noble's Tunic</body>
+            <legs>Baron's Slops</legs>
+            <waist>Mohbwa Sash +1</waist>
+        </set>
+
+        <set name="TP" baseset="Idle">
+            <head>Optical Hat</head>
+            <waist>Tilt Belt</waist>
+        </set>
+
+        <set name="BloodPactDelay" baseset="Idle">
+            <head>Austere Hat</head>
+            <body>Yinyang Robe</body>
+            <legs>Summoner's Spats</legs>
+        </set>
+
+        <set name="SummoningSkill" baseset="Idle">
+            <head>Evoker's Horn</head>
+            <!--<neck>Summoning Torque</neck>-->
+            <body>Yinyang Robe</body>
+            <ring1>Evoker's Ring</ring1>
+        </set>
+
+        <set name="PerpCost">
+            <ring1>Evoker's Ring</ring1>
+        </set>
+
+        <set name="Carbuncle" baseset="PerpCost">
+            <main>$lightStaff</main>
+            <hands>Carbuncle Mitts</hands>
+        </set>
+        <set name="Fenrir" baseset="PerpCost"><main>$darkStaff</main></set>
+        <set name="Ifrit" baseset="PerpCost"><main>$fireStaff</main></set>
+        <set name="Shiva" baseset="PerpCost"><main>$iceStaff</main></set>
+        <set name="Garuda" baseset="PerpCost"><main>$windStaff</main></set>
+        <set name="Titan" baseset="PerpCost"><main>$earthStaff</main></set>
+        <set name="Ramuh" baseset="PerpCost"><main>$thunderStaff</main></set>
+        <set name="Leviathan" baseset="PerpCost"><main>$waterStaff</main></set>
+
+        <set name="FastCast">
+            <feet>Rostrum Pumps</feet>
+        </set>
+
+        <set name="Haste">
+        </set>
+
+        <set name="Interrupt">
+            <main>Ebony Wand</main>
+            <sub>Genbu's Shield</sub>
+        </set>
+
+        <set name="Enmity">
+            <ammo>Hedgehog Bomb</ammo>
+            <legs>Errant Slops</legs>
+            <feet>Errant Pigaches</feet>
+        </set>
+
+        <set name="MND">
+            <main>Ebony Wand</main>
+            <sub>Tortoise Shield</sub>
+            <head>Zenith Crown</head>
+            <neck>Holy Phial</neck>
+            <hands>Devotee's Mitts</hands>
+            <ring1>Saintly Ring</ring1>
+            <ring2>Saintly Ring</ring2>
+            <back>Rainbow Cape</back>
+            <waist>Friar's Rope</waist>
+            <legs>Errant Slops</legs>
+            <feet>Errant Pigaches</feet>
+        </set>
+
+        <set name="INT">
+            <main>Ebony Wand</main>
+            <sub>Tortoise Shield</sub>
+            <ammo>Phtm. Tathlum</ammo>
+            <body>Shaman's Cloak</body>
+            <ring1>Eremite's Ring</ring1>
+            <ring2>Eremite's Ring</ring2>
+            <back>Rainbow Cape</back>
+            <legs>Errant Slops</legs>
+            <feet>Rostrum Pumps</feet>
+        </set>
+
+        <set name="Cure" baseset="MND">
+            <main>Light Staff</main>
+            <sub>Raptor Strap +1</sub>
+            <ammo>Hedgehog Bomb</ammo>
+        </set>
+
+        <set name="Enfeeble">
+            <neck>Enfeebling Torque</neck>
+            <body>Shaman's Cloak</body>
+        </set>
+
+    </sets>
+
+    <variables>
+        <!-- Replace these with HQ/NQ variants depending on what you've got -->
+        <var name="lightStaff">Light Staff</var>
+        <var name="darkStaff">Dark Staff</var>
+        <var name="fireStaff">Fire Staff</var>
+        <var name="iceStaff">Ice Staff</var>
+        <var name="windStaff">Wind Staff</var>
+        <var name="earthStaff">Earth Staff</var>
+        <var name="thunderStaff">Thunder Staff</var>
+        <var name="waterStaff">Water Staff</var>
+    </variables>
+
+    <inputcommands>
+    </inputcommands>
+
+    <premagic>
+        <equip set="FastCast" />
+    </premagic>
+
+    <midmagic>
+        <!-- TODO: Don't swap weapons if engaged -->
+        <!-- TODO: Cancel sneak/invis/stoneskin -->
+        <!--
+        <if BuffActive="358">
+            <clearbuff id="401" />
+        </if>
+        -->
+        <equip set="Haste" />
+
+        <!-- Determine whether spell is a MND or INT enfeeble and use appropriate gear -->
+        <if ad_skill="EnfeeblingMagic">
+            <if ad_type="WhiteMagic">
+                <equip set="MND" />
+            </if>
+            <elseif ad_type="BlackMagic">
+                <equip set="INT" />
+            </elseif>
+            <equip set="Enfeeble" />
+        </if>
+
+        <!-- Specific spells -->
+        <elseif ad_name="Cur*">
+            <equip set="Cure" />
+        </elseif>
+        <elseif ad_name="Bar*">
+            <equip set="Barspell" />
+        </elseif>
+        <elseif ad_name="Stoneskin">
+            <equip set="MND" />
+        </elseif>
+        <elseif ad_skill="Divine Magic">
+            <equip set="Divine" />
+        </elseif>
+        <elseif ad_name="Warp|Escape|Utsusemi*">
+            <equip set="Interrupt" />
+        </elseif>
+
+        <!-- Elemental Staff handling -->
+        <if advanced="(%at_type=monster)&(%ad_element!=unknown)">
+            <equip>
+                <main>$%ad_elementStaff</main>
+                <sub>Raptor Strap +1</sub>
+            </equip>
+        </if>
+    </midmagic>
+
+    <jobability>
+        <!-- TODO: Bloodpact logic -->
+    </jobability>
+
+    <weaponskill>
+    </weaponskill>
+
+    <idlegear>
+        <if p_status="resting">
+            <equip set="Resting" />
+        </if>
+        <elseif p_status="engaged">
+            <equip set="TP" />
+        </elseif>
+        <else>
+            <equip set="Idle" />
+        </else>
+
+        <if pet_name="Carbuncle|LightSpirit"><equip set="Carbuncle" /></if>
+        <elseif pet_name="Fenrir|DarkSpirit"><equip set="Fenrir" /></elseif>
+        <elseif pet_name="Ifrit|FireSpirit"><equip set="Ifrit" /></elseif>
+        <elseif pet_name="Shiva|IceSpirit"><equip set="Shiva" /></elseif>
+        <elseif pet_name="Garuda|WindSpirit"><equip set="Garuda" /></elseif>
+        <elseif pet_name="Titan|EarthSpirit"><equip set="Titan" /></elseif>
+        <elseif pet_name="Ramuh|ThunderSpirit"><equip set="Ramuh" /></elseif>
+        <elseif pet_name="Leviathan|WaterSpirit"><equip set="Leviathan" /></elseif>
+        <if pet_name="*Spirit">
+            <equip><legs>Summoner's Spats</legs></equip>
+        </if>
+
+        <if e_area="Bastok*">
+            <equip>
+                <head>Gala Corsage</head>
+                <body>Republic Aketon</body>
+            </equip>
+        </if>
+        <if buffactive="Sleep">
+            <equip><neck>Opo-opo Necklace</neck></equip>
+        </if>
+    </idlegear>
+
+</ashitacast>
