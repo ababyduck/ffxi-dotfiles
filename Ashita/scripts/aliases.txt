@@ -1,4 +1,46 @@
 # Aliases for use with ashita
+/alias add /bl /ma "Blink" <me>
+/alias add /ss /ma "Stoneskin" <me>
+/alias add /av /ma "Aquaveil" <me>
+/alias add /ph /ma "Phalanx" <me>
+/alias add /rr /ma "Reraise" <me>
+/alias add /rr2 /ma "Reraise II" <me>
+/alias add /rr3 /ma "Reraise III" <me>
+/alias add /pra /ma "Protectra" <me>
+/alias add /pra2 /ma "Protectra II" <me>
+/alias add /pra3 /ma "Protectra III" <me>
+/alias add /pra4 /ma "Protectra IV" <me>
+/alias add /pra5 /ma "Protectra V" <me>
+/alias add /shra /ma "Shellra" <me>
+/alias add /shra2 /ma "Shellra II" <me>
+/alias add /shra3 /ma "Shellra III" <me>
+/alias add /shra4 /ma "Shellra IV" <me>
+/alias add /shra5 /ma "Shellra V" <me>
+/alias add /barf /ma "Barfira" <me>
+/alias add /barb /ma "Barblizzara" <me>
+/alias add /bara /ma "Baraera" <me>
+/alias add /bars /ma "Barstonra" <me>
+/alias add /bart /ma "Barthundra" <me>
+/alias add /barw /ma "Barwatera" <me>
+/alias add /holla /ma "Teleport-Holla" <me>
+/alias add /dem /ma "Teleport-Dem" <me>
+/alias add /mea /ma "Teleport-Mea" <me>
+/alias add /altep /ma "Teleport-Altep" <me>
+/alias add /yhoat /ma "Teleport-Yhoat" <me>
+/alias add /vahzl /ma "Teleport-Vahzl" <me>
+/alias add /warp /ma "Warp" <me>
+/alias add /esc /ma "Escape" <me>
+/alias add /maz /ma "Chocobo Mazurka" <me>
+/alias add /carbuncle /ma "Carbuncle" <me>
+/alias add /carb /ma "Carbuncle" <me>
+/alias add /fenrir /ma "Fenrir" <me>
+/alias add /fen /ma "Fenrir" <me>
+/alias add /leviathan /ma "Leviathan" <me>
+/alias add /levi /ma "Leviathan" <me>
+/alias add /ifrit /ma "Ifrit" <me>
+/alias add /garuda /ma "Garuda" <me>
+/alias add /shiva /ma "Shiva" <me>
+/alias add /ramuh /ma "Ramuh" <me>
 /alias add /pnails /pet "Poison Nails" <stnpc>
 /alias add /hastega /pet "Hastega" <me>
 /alias add /blinkga /pet "Aerial Armor" <me>
@@ -24,52 +66,21 @@
 /alias add /r1 //raise
 /alias add /r2 //raise2
 /alias add /r3 //raise3
-/alias add /rr //reraise
-/alias add /rr2 //reraise2
-/alias add /rr3 //reraise3
 /alias add /haste //haste
 /alias add /in //invisible
 /alias add /inv //invisible
 /alias add /sn //sneak
-/alias add /bara //baraera
-/alias add /barb //barblizzara
-/alias add /barf //barfira
-/alias add /bars //barstonra
-/alias add /bart //barthundra
-/alias add /barw //barwatera
-/alias add /maz //chocobomazurka
 /alias add /ref //refresh
 /alias add /pro //protect
 /alias add /pro2 //protect2
 /alias add /pro3 //protect3
 /alias add /pro4 //protect4
 /alias add /pro5 //protect5
-/alias add /prora //protect
-/alias add /prora2 //protect2
-/alias add /prora3 //protect3
-/alias add /prora4 //protect4
-/alias add /prora5 //protect5
 /alias add /sh //shell
 /alias add /sh2 //shell2
 /alias add /sh3 //shell3
 /alias add /sh4 //shell4
 /alias add /sh5 //shell5
-/alias add /shra //shell
-/alias add /shra2 //shellra2
-/alias add /shra3 //shellra3
-/alias add /shra4 //shellra4
-/alias add /shra5 //shellra5
-/alias add /bl //blink
-/alias add /ss //stoneskin
-/alias add /av //aquaveil
-/alias add /ph //phalanx
-/alias add /holla //teleport-holla
-/alias add /dem //teleport-dem
-/alias add /mea //teleport-mea
-/alias add /altep //teleport-altep
-/alias add /yhoat //teleport-yhoat
-/alias add /vahzl //teleport-vahzl
-/alias add /esc //escape
 /alias add /pna //poisona
 /alias add /pana //paralyna
 /alias add /parana //paralyna
@@ -81,7 +92,6 @@
 /alias add /pena //stona
 /alias add /vna //viruna
 /alias add /voke //provoke
-/alias add /warp //warp
 #/alias add /sleep //sleep
 /alias add /sleepga //sleepga
 /alias add /para //paralyze
@@ -90,14 +100,3 @@
 /alias add /silence //silence
 /alias add /sil //silence
 /alias add /finale //magicfinale
-/alias add /carbuncle //carbuncle
-/alias add /carb //carbuncle
-/alias add /fenrir //fenrir
-/alias add /fen //fenrir
-/alias add /leviathan //leviathan
-/alias add /levi //leviathan
-/alias add /ifrit //ifrit
-/alias add /garuda //garuda
-/alias add /shiva //shiva
-/alias add /ramuh //ramuh
-/alias add /ram //ramuh
