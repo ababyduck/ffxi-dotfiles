@@ -1,0 +1,92 @@
+##########################################################################
+#
+# Ashita Default Script
+#
+# Comments start with '#'.
+# All commands start with '/'
+#
+##########################################################################
+
+/wait 4
+
+##########################################################################
+# Load Common Plugins
+##########################################################################
+
+/plugin silent
+
+/load WindowerInput
+/load Addons
+/load Screenshot
+/load Ashitacast
+/load Shorthand
+/load WatchEXP
+/load Dats
+/load Duration
+/load GearLock
+
+/plugin silent
+
+##########################################################################
+# Load Common Addons
+##########################################################################
+
+/addon silent
+
+/addon load distance
+/addon load fps
+/addon load timestamp
+/addon load tparty
+
+#/addon load ime
+/addon load macrofix
+/addon load filterless
+/addon load links
+
+#/addon load renamer
+#/renamer load eden
+
+/addon silent
+
+##########################################################################
+# Set Common Settings
+##########################################################################
+
+/ambient 118 118 118 118
+/ambient
+/fps 1
+/fps show
+/drawdistance setworld 20
+/drawdistance setmob 20
+
+# Gearlock config
+/gl self off
+/gl target on
+
+##########################################################################
+# Set Common Keybinds
+##########################################################################
+
+/bind silent
+
+/bind SYSRQ /screenshot hide
+/bind ^SYSRQ /screenshot
+/bind ^v /paste
+/bind F11 /ambient
+/bind F12 /fillmode
+/bind ^F1 /input /ta <a10>
+/bind ^F2 /input /ta <a11>
+/bind ^F3 /input /ta <a12>
+/bind ^F4 /input /ta <a13>
+/bind ^F5 /input /ta <a14>
+/bind ^F6 /input /ta <a15>
+/bind !F1 /input /ta <a20>
+/bind !F2 /input /ta <a21>
+/bind !F3 /input /ta <a22>
+/bind !F4 /input /ta <a23>
+/bind !F5 /input /ta <a24>
+/bind !F6 /input /ta <a25>
+
+/bind silent
+
+/exec aliases

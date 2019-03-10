@@ -1,0 +1,63 @@
+<ashitacast>
+
+    <settings>
+        <!--Determines if your idlegear will be parsed when you gain/lose a buff. Default: TRUE -->
+        <buffupdate>true</buffupdate>
+        <!--Determines if your idlegear will be parsed when you change status(stand/rest/engage/etc).  Default: TRUE -->
+        <statusupdate>true</statuspdate>
+        <!--Determines if your idlegear will be parsed when your HP % changes.  Default: TRUE -->
+        <hpupdate>false</hpupdate>
+        <!--Determines if your idlegear will be parsed on outgoing status updates(roughly every 350ms).  Default: TRUE-->
+        <autoupdate>true</autoupdate>
+    </settings>
+    
+    <init>
+        <command>/macro book 1</command>
+        <command delay="1000">/macro set 1</command>
+    </init>
+
+    <sets>
+
+        <set name="Idle">
+            <main></main>
+            <sub></sub>
+            <range></range>
+            <ammo></ammo>
+            <head></head>
+            <neck></neck>
+            <ear1></ear1>
+            <ear2></ear2>
+            <body></body>
+            <hands></hands>
+            <ring1></ring1>
+            <ring2></ring2>
+            <back></back>
+            <waist></waist>
+            <legs></legs>
+            <feet></feet>
+        </set>
+
+        <set name="Resting" baseset="Idle">
+        </set>
+
+    </sets>
+
+    <variables>
+    </variables>
+
+    <inputcommands>
+    </inputcommands>
+
+    <premagic>
+    </premagic>
+
+    <midmagic>
+    </midmagic>
+
+    <jobability>
+    </jobability>
+
+    <weaponskill>
+    </weaponskill>
+
+</ashitacast>
