@@ -203,13 +203,6 @@
     </weaponskill>
 
     <idlegear>
-        <if e_area="Bastok*">
-            <equip><body>Republic Aketon</body></equip>
-        </if>
-        <if buffactive="Sleep">
-            <equip><neck>Opo-opo Necklace</neck></equip>
-        </if>
-
         <if p_status="resting">
             <equip set="Resting" />
         </if>
@@ -219,6 +212,13 @@
         <else>
             <equip set="Idle" />
         </else>
+
+        <if e_area="Bastok*">
+            <equip><body>Republic Aketon</body></equip>
+        </if>
+        <if buffactive="Sleep">
+            <equip><neck>Opo-opo Necklace</neck></equip>
+        </if>
     </idlegear>
 
 </ashitacast>
