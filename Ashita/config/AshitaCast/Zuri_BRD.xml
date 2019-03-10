@@ -1,0 +1,308 @@
+<ashitacast>
+
+    <settings>
+        <!--Determines if your idlegear will be parsed when you gain/lose a buff. Default: TRUE -->
+        <buffupdate>true</buffupdate>
+        <!--Determines if your idlegear will be parsed when you change status(stand/rest/engage/etc).  Default: TRUE -->
+        <statusupdate>true</statuspdate>
+        <!--Determines if your idlegear will be parsed when your HP % changes.  Default: TRUE -->
+        <hpupdate>false</hpupdate>
+        <!--Determines if your idlegear will be parsed on outgoing status updates(roughly every 350ms).  Default: TRUE-->
+        <autoupdate>true</autoupdate>
+    </settings>
+
+    <init>
+        <command>/macro book 2</command>
+        <if p_subjob="nin">
+            <command delay="1000">/macro set 2</command>
+        </if>
+        <else>
+            <command delay="1000">/macro set 1</command>
+        </else>
+    </init>
+    
+    <sets>
+
+        <set name="Idle">
+            <main>Joyeuse</main>
+            <sub>Genbu's Shield</sub>
+            <range>San d'Orian Horn</range>
+            <neck>Bird Whistle</neck>
+            <ear1>Melody Earring +1</ear1>
+            <ear2>Melody Earring +1</ear2>
+            <body>Royal Cloak</body>
+            <hands>Choral Cuffs</hands>
+            <ring1>Angel's Ring</ring1>
+            <ring2>Angel's Ring</ring2>
+            <back>Rainbow Cape</back>
+            <waist>Corsette +1</waist>
+            <legs>Choral Cannions</legs>
+            <feet>Rostrum Pumps</feet>
+        </set>
+
+        <set name="Resting" baseset="Idle">
+            <main>Dark Staff</main>
+            <body>Noble's Tunic</body>
+            <legs>Baron's Slops</legs>
+            <waist>Mohbwa Sash +1</waist>
+        </set>
+
+        <set name="TP" baseset="Idle">
+            <head>Optical Hat</head>
+            <body>Scorpion Harness</body>
+            <waist>Tilt Belt</waist>
+        </set>
+
+        <set name="CHR" baseset="Idle">
+            <main>Monster Signa</main>
+            <range>San d'Orian Horn</range>
+            <head>Entrancing Ribbon</head>
+            <neck>Bird Whistle</neck>
+            <ear1>Melody Earring +1</ear1>
+            <ear2>Melody Earring +1</ear2>
+            <body>Savage Separates</body>
+            <hands>Choral Cuffs</hands>
+            <ring1>Angel's Ring</ring1>
+            <ring2>Angel's Ring</ring2>
+            <back>Rainbow Cape</back>
+            <waist>Corsette +1</waist>
+            <legs>Errant Slops</legs>
+            <feet>Savage Gaiters</feet>
+        </set>
+
+        <set name="Singing" baseset="CHR">
+            <head>Demon Helm</head>
+            <hands>Choral Cuffs</hands>
+        </set>
+
+        <set name="Wind" baseset="Singing">
+            <neck>Wind Torque</neck>
+            <body>Minstrel's Coat</body>
+            <legs>Choral Cannions</legs>
+        </set>
+        
+        <set name="String" baseset="Singing">
+            <body>Minstrel's Coat</body>
+        </set>
+
+        <set name="Elegy" baseset="Wind"><range>Horn +1</range></set>
+        <set name="Lullaby" baseset="Wind"><range>Mary's Horn</range></set>
+        <set name="Madrigal" baseset="Wind"><range>Traversiere +1</range></set>
+        <set name="March" baseset="Wind"><range>Faerie Piccolo</range></set>
+        <set name="Minuet" baseset="Wind"><range>Cornette +1</range></set>
+        <set name="Threnody" baseset="Wind"><range>Piccolo</range></set>
+
+        <set name="MND">
+            <main>Ebony Wand</main>
+            <sub>Tortoise Shield</sub>
+            <head>Zenith Crown</head>
+            <neck>Holy Phial</neck>
+            <hands>Devotee's Mitts</hands>
+            <ring1>Saintly Ring</ring1>
+            <ring2>Saintly Ring</ring2>
+            <back>Rainbow Cape</back>
+            <waist>Friar's Rope</waist>
+            <legs>Errant Slops</legs>
+            <feet>Errant Pigaches</feet>
+        </set>
+
+        <set name="INT">
+            <main>Ebony Wand</main>
+            <sub>Tortoise Shield</sub>
+            <ammo>Phtm. Tathlum</ammo>
+            <body>Shaman's Cloak</body>
+            <ring1>Eremite's Ring</ring1>
+            <ring2>Eremite's Ring</ring2>
+            <back>Rainbow Cape</back>
+            <legs>Errant Slops</legs>
+            <feet>Rostrum Pumps</feet>
+        </set>
+
+        <set name="Cure" baseset="MND">
+            <main>Light Staff</main>
+            <sub>Raptor Strap +1</sub>
+            <ammo>Hedgehog Bomb</ammo>
+            <body>Noble's Tunic</body>
+            <hands>Healer's Mitts</hands>
+        </set>
+
+        <set name="Enfeeble">
+            <neck>Enfeebling Torque</neck>
+            <body>Shaman's Cloak</body>
+        </set>
+
+        <set name="FastCast">
+            <feet>Rostrum Pumps</feet>
+        </set>
+
+        <set name="SongPrecast" baseset="FastCast">
+        </set>
+
+        <set name="Haste">
+        </set>
+
+        <set name="Interrupt">
+        </set>
+
+        <set name="Enmity">
+            <ammo>Hedgehog Bomb</ammo>
+            <legs>Errant Slops</legs>
+            <feet>Errant Pigaches</feet>
+        </set>
+
+    </sets>
+
+    <variables>
+        <!-- Replace these with HQ/NQ variants depending on what you've got -->
+        <var name="lightStaff">Light Staff</var>
+        <var name="darkStaff">Dark Staff</var>
+        <var name="fireStaff">Fire Staff</var>
+        <var name="iceStaff">Ice Staff</var>
+        <var name="windStaff">Wind Staff</var>
+        <var name="earthStaff">Earth Staff</var>
+        <var name="thunderStaff">Thunder Staff</var>
+        <var name="waterStaff">Water Staff</var>
+    </variables>
+
+    <inputcommands>
+        <cmd input="/melee">
+            <equip lock="true">
+                <main>Joyeuse</main>
+                <sub>Genbu's Shield</sub>
+            </equip>
+        </cmd>
+    </inputcommands>
+
+    <premagic>
+        <if ad_type="BardSong">
+            <equip set="SongPrecast" />
+        </if>
+        <else>
+            <equip set="FastCast" />
+        </else>
+    </premagic>
+
+    <midmagic>
+        <!-- TODO: Don't swap weapons if engaged -->
+        <!-- TODO: Cancel sneak/invis/stoneskin -->
+        <!--
+        <if BuffActive="358">
+            <clearbuff id="401" />
+        </if>
+        -->
+        <equip set="Haste" />
+
+        <if ad_type="BardSong">
+            <if at_type="monster">
+                <equip set="Wind" />
+            </if>
+            <else>
+                <equip set="CHR" />
+            </else>
+
+            <if ad_name="*Elegy">
+                <equip set="Elegy" />
+            </if>
+            <elseif ad_name="*Lullaby">
+                <equip set="Lullaby" />
+            </elseif>
+            <elseif ad_name="*Madrigal">
+                <equip set="Madrigal" />
+            </elseif>
+            <elseif ad_name="*March">
+                <equip set="March" />
+            </elseif>
+            <elseif ad_name="Valor Minuet*">
+                <equip set="Minuet" />
+            </elseif>
+            <elseif ad_name="Valor Minuet*">
+                <equip set="Minuet" />
+            </elseif>
+            <elseif ad_name="Magic Finale">
+                <equip set="Finale" />
+            </elseif>
+            <elseif ad_name="Foe Requiem*">
+                <equip set="Requiem" />
+            </elseif>
+            <elseif ad_name="*Prelude">
+                <equip set="Prelude" />
+            </elseif>
+            <elseif ad_name="*Threnody">
+                <equip set="Threnody" />
+            </elseif>
+            <elseif ad_name="*Carol">
+                <equip set="Carol" />
+            </elseif>
+            <elseif ad_name="*Etude">
+                <equip set="Etude" />
+            </elseif>
+            <elseif ad_name="*Mazurka|*Hymnus">
+                <equip>
+                    <range>Maple Harp</range>
+                </equip>
+            </elseif>
+        </if>
+
+        <!-- Determine whether spell is a MND or INT enfeeble and use appropriate gear -->
+        <if ad_skill="EnfeeblingMagic">
+            <if ad_type="WhiteMagic">
+                <equip set="MND" />
+            </if>
+            <elseif ad_type="BlackMagic">
+                <equip set="INT" />
+            </elseif>
+            <equip set="Enfeeble" />
+        </if>
+
+        <!-- Specific spells -->
+        <elseif ad_name="Cur*">
+            <equip set="Cure" />
+        </elseif>
+        <elseif ad_name="Stoneskin">
+            <equip set="MND" />
+        </elseif>
+        <elseif ad_name="Warp|Escape|Utsusemi*">
+            <equip set="Interrupt" />
+        </elseif>
+
+        <!-- Elemental Staff handling -->
+        <if advanced="(%at_type=monster)&(%ad_element!=unknown)">
+            <equip>
+                <main>$%ad_elementStaff</main>
+                <sub>Raptor Strap +1</sub>
+            </equip>
+        </if>
+    </midmagic>
+
+    <jobability>
+        <if ad_name="Benediction">
+            <equip set="Enmity" />
+        </if>
+    </jobability>
+
+    <weaponskill>
+    </weaponskill>
+
+    <idlegear>
+        <if p_status="resting">
+            <equip set="Resting" />
+        </if>
+        <elseif p_status="engaged">
+            <equip set="TP" />
+        </elseif>
+        <else>
+            <equip set="Idle" />
+        </else>
+
+        <if e_area="Bastok*">
+            <equip>
+                <head>Gala Corsage</head>
+                <body>Republic Aketon</body>
+            </equip>
+        </if>
+        <if buffactive="Sleep">
+            <equip><neck>Opo-opo Necklace</neck></equip>
+        </if>
+    </idlegear>
+
+</ashitacast>
