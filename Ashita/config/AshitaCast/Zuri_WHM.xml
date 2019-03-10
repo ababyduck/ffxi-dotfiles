@@ -102,6 +102,7 @@
 
         <set name="Cure" baseset="MND">
             <main>Healing Staff</main>
+            <sub>Raptor Strap +1</sub>
             <ammo>Hedgehog Bomb</ammo>
             <head>Cleric's Cap</head>
             <body>Noble's Tunic</body>
@@ -213,7 +214,10 @@
         </else>
 
         <if e_area="Bastok*">
-            <equip><body>Republic Aketon</body></equip>
+            <equip>
+                <head>Gala Corsage</head>
+                <body>Republic Aketon</body>
+            </equip>
         </if>
         <if buffactive="Sleep">
             <equip><neck>Opo-opo Necklace</neck></equip>
