@@ -275,9 +275,6 @@
     </midmagic>
 
     <jobability>
-        <if ad_name="Benediction">
-            <equip set="Enmity" />
-        </if>
     </jobability>
 
     <weaponskill>
