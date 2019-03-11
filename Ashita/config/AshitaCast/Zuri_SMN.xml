@@ -51,14 +51,14 @@
             <head>Evoker's Horn</head>
             <!--<neck>Summoning Torque</neck>-->
             <body>Yinyang Robe</body>
-            <hads>Summoner's Brcr.</hads>
+            <hands>Summoner's Brcr.</hands>
             <ring1>Evoker's Ring</ring1>
         </set>
 
         <set name="BPDelay" baseset="SummoningSkill">
             <head>Austere Hat</head>
             <body>Yinyang Robe</body>
-            <hads>Summoner's Brcr.</hads>
+            <hands>Summoner's Brcr.</hands>
             <legs>Summoner's Spats</legs>
         </set>
 
@@ -201,6 +201,11 @@
         </if>
     </midmagic>
 
+    <petskill>
+        <if ad_type="bloodpact*">
+            <equip set="BPDelay" />
+        </if>
+    </petskill>
     <jobability>
         <if ad_type="bloodpact*">
             <equip set="BPDelay" />
@@ -226,7 +231,7 @@
         <elseif pet_name="Fenrir|DarkSpirit"><equip set="Fenrir" /></elseif>
         <elseif pet_name="Ifrit|FireSpirit"><equip set="Ifrit" /></elseif>
         <elseif pet_name="Shiva|IceSpirit"><equip set="Shiva" /></elseif>
-        <elseif pet_name="Garuda|WindSpirit"><equip set="Garuda" /></elseif>
+        <elseif pet_name="Garuda|AirSpirit"><equip set="Garuda" /></elseif>
         <elseif pet_name="Titan|EarthSpirit"><equip set="Titan" /></elseif>
         <elseif pet_name="Ramuh|ThunderSpirit"><equip set="Ramuh" /></elseif>
         <elseif pet_name="Leviathan|WaterSpirit"><equip set="Leviathan" /></elseif>

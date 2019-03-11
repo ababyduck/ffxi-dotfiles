@@ -40,6 +40,7 @@
 
 #/addon load ime
 /addon load macrofix
+/addon load recast
 /addon load filterless
 /addon load links
 
