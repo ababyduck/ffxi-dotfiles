@@ -12,11 +12,16 @@
 /alias add /pra3 /ma "Protectra III" <me>
 /alias add /pra4 /ma "Protectra IV" <me>
 /alias add /pra5 /ma "Protectra V" <me>
-/alias add /shra /ma "Shellra" <me>
-/alias add /shra2 /ma "Shellra II" <me>
-/alias add /shra3 /ma "Shellra III" <me>
-/alias add /shra4 /ma "Shellra IV" <me>
-/alias add /shra5 /ma "Shellra V" <me>
+/alias add /prora /ma "Protectra" <me>
+/alias add /prora2 /ma "Protectra II" <me>
+/alias add /prora3 /ma "Protectra III" <me>
+/alias add /prora4 /ma "Protectra IV" <me>
+/alias add /prora5 /ma "Protectra V" <me>
+/alias add /sra /ma "Shellra" <me>
+/alias add /sra2 /ma "Shellra II" <me>
+/alias add /sra3 /ma "Shellra III" <me>
+/alias add /sra4 /ma "Shellra IV" <me>
+/alias add /sra5 /ma "Shellra V" <me>
 /alias add /barf /ma "Barfira" <me>
 /alias add /barb /ma "Barblizzara" <me>
 /alias add /bara /ma "Baraera" <me>

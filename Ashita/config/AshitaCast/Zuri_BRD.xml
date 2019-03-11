@@ -41,7 +41,8 @@
         </set>
 
         <set name="Resting" baseset="Idle">
-            <main>Dark Staff</main>
+            <main>$darkStaff</main>
+            <sub>Raptor Strap +1</sub>
             <body>Noble's Tunic</body>
             <legs>Baron's Slops</legs>
             <waist>Mohbwa Sash +1</waist>
@@ -119,7 +120,7 @@
         </set>
 
         <set name="Cure" baseset="MND">
-            <main>Light Staff</main>
+            <main>$lightStaff</main>
             <sub>Raptor Strap +1</sub>
             <ammo>Hedgehog Bomb</ammo>
             <body>Noble's Tunic</body>
@@ -142,6 +143,7 @@
         </set>
 
         <set name="Interrupt">
+            <main>$earthStaff</main>
         </set>
 
         <set name="Enmity">

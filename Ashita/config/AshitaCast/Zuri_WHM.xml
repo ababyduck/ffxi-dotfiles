@@ -37,7 +37,8 @@
         </set>
 
         <set name="Resting" baseset="Idle">
-            <main>Dark Staff</main>
+            <main>$darkStaff</main>
+            <sub>Raptor Strap +1</sub>
             <body>Noble's Tunic</body>
             <legs>Baron's Slops</legs>
             <waist>Mohbwa Sash +1</waist>
@@ -59,8 +60,7 @@
         </set>
 
         <set name="Interrupt">
-            <main>Ebony Wand</main>
-            <sub>Genbu's Shield</sub>
+            <main>$earthStaff</main>
             <feet>Healer's Duckbills</feet>
         </set>
 
@@ -115,6 +115,7 @@
         </set>
 
         <set name="Divine" baseset="MND">
+            <main>$waterStaff</main>
             <legs>Healer's Pantaln.</legs>
         </set>
 

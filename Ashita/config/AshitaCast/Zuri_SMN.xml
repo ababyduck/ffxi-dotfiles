@@ -37,7 +37,8 @@
 
         <set name="Resting" baseset="Idle">
             <main>Dark Staff</main>
-            <body>Noble's Tunic</body>
+            <sub>Raptor Strap +1</sub>
+            <body>Yinyang Robe</body>
             <legs>Baron's Slops</legs>
             <waist>Mohbwa Sash +1</waist>
         </set>
