@@ -1,5 +1,8 @@
-# Aliases for use with ashita
+# Custom Aliases
 /alias add /cookie /item "Ginger Cookie" <me>
+/alias add /iworm /pet "Assault" <bt>
+
+# Standard Spell/Ability Aliases
 /alias add /bl /ma "Blink" <me>
 /alias add /ss /ma "Stoneskin" <me>
 /alias add /av /ma "Aquaveil" <me>
@@ -54,12 +57,11 @@
 /alias add /aspirit /ma "Air Spirit" <me>
 /alias add /espirit /ma "Earth Spirit" <me>
 /alias add /tspirit /ma "Thunder Spirit" <me>
-/alias add /wspirit /ma "Water Spirit" <me>
 /alias add /pnails /pet "Poison Nails" <stnpc>
+/alias add /wspirit /ma "Water Spirit" <me>
 /alias add /hastega /pet "Hastega" <me>
-/alias add /blinkga /pet "Aerial Armor" <me>
-/alias add /ssga /pet "Earthen Ward" <me>
-/alias add /iworm /pet "Assault" <bt>
+/alias add /aa /pet "Aerial Armor" <me>
+/alias add /ew /pet "Earthen Ward" <me>
 
 # The following aliases rely on the Shorthand plugin
 /alias add /c1 //cure

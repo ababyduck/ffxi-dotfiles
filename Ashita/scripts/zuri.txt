@@ -1,6 +1,6 @@
 ##########################################################################
 #
-# Ashita Default Script
+# Zuri's Ashita Startup Script
 #
 # Comments start with '#'.
 # All commands start with '/'
@@ -23,7 +23,11 @@
 /load WatchEXP
 /load Dats
 /load Duration
+
 /load GearLock
+/gl self off
+/gl others off
+/gl target on
 
 /plugin silent
 
@@ -39,13 +43,17 @@
 /addon load tparty
 
 #/addon load ime
-/addon load drawdistance
 /addon load macrofix
 /addon load recast
 /addon load filterless
 
-#/addon load renamer
-#/renamer load eden
+/addon load drawdistance
+/drawdistance setworld 6
+/drawdistance setmob 6
+
+/addon load renamer
+/renamer load eramobs
+#/renamer load promyvions
 
 /addon silent
 
@@ -57,13 +65,6 @@
 /ambient
 /fps 1
 /fps show
-/drawdistance setworld 6
-/drawdistance setmob 6
-
-# Gearlock config
-/gl self off
-/gl others off
-/gl target on
 
 ##########################################################################
 # Set Common Keybinds
