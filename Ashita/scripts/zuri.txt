@@ -39,10 +39,10 @@
 /addon load tparty
 
 #/addon load ime
+/addon load drawdistance
 /addon load macrofix
 /addon load recast
 /addon load filterless
-/addon load links
 
 #/addon load renamer
 #/renamer load eden
@@ -57,11 +57,12 @@
 /ambient
 /fps 1
 /fps show
-/drawdistance setworld 20
-/drawdistance setmob 20
+/drawdistance setworld 6
+/drawdistance setmob 6
 
 # Gearlock config
 /gl self off
+/gl others off
 /gl target on
 
 ##########################################################################
