@@ -148,6 +148,7 @@
     </variables>
 
     <inputcommands>
+        <!-- TODO: Add command for 25/29 cap (Attohwa Chasm Burn) -->
     </inputcommands>
 
     <premagic>
@@ -226,18 +227,19 @@
             <equip set="Idle" />
         </else>
 
-        <!-- TODO: Figure out why spirits aren't working here -->
-        <if pet_name="Carbuncle|LightSpirit"><equip set="Carbuncle" /></if>
-        <elseif pet_name="Fenrir|DarkSpirit"><equip set="Fenrir" /></elseif>
-        <elseif pet_name="Ifrit|FireSpirit"><equip set="Ifrit" /></elseif>
-        <elseif pet_name="Shiva|IceSpirit"><equip set="Shiva" /></elseif>
-        <elseif pet_name="Garuda|AirSpirit"><equip set="Garuda" /></elseif>
-        <elseif pet_name="Titan|EarthSpirit"><equip set="Titan" /></elseif>
-        <elseif pet_name="Ramuh|ThunderSpirit"><equip set="Ramuh" /></elseif>
-        <elseif pet_name="Leviathan|WaterSpirit"><equip set="Leviathan" /></elseif>
-        <if pet_name="*Spirit">
-            <equip set="SummoningSkill" />
-            <equip><legs>Summoner's Spats</legs></equip>
+        <if pet_active="true">
+            <if pet_name="*Spirit">
+                <equip set="SummoningSkill" />
+                <equip><legs>Summoner's Spats</legs></equip>
+            </if>
+            <if pet_name="Carbuncle|LightSpirit"><equip set="Carbuncle" /></if>
+            <elseif pet_name="Fenrir|DarkSpirit"><equip set="Fenrir" /></elseif>
+            <elseif pet_name="Ifrit|FireSpirit"><equip set="Ifrit" /></elseif>
+            <elseif pet_name="Shiva|IceSpirit"><equip set="Shiva" /></elseif>
+            <elseif pet_name="Garuda|AirSpirit"><equip set="Garuda" /></elseif>
+            <elseif pet_name="Titan|EarthSpirit"><equip set="Titan" /></elseif>
+            <elseif pet_name="Ramuh|ThunderSpirit"><equip set="Ramuh" /></elseif>
+            <elseif pet_name="Leviathan|WaterSpirit"><equip set="Leviathan" /></elseif>
         </if>
 
         <if e_area="Bastok*">

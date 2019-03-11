@@ -46,11 +46,10 @@
 /alias add /dspirit /ma "Dark Spirit" <me>
 /alias add /fspirit /ma "Fire Spirit" <me>
 /alias add /ispirit /ma "Ice Spirit" <me>
-/alias add /wispirit /ma "Wind Spirit" <me>
+/alias add /aspirit /ma "Air Spirit" <me>
 /alias add /espirit /ma "Earth Spirit" <me>
 /alias add /tspirit /ma "Thunder Spirit" <me>
 /alias add /wspirit /ma "Water Spirit" <me>
-/alias add /waspirit /ma "Water Spirit" <me>
 /alias add /pnails /pet "Poison Nails" <stnpc>
 /alias add /hastega /pet "Hastega" <me>
 /alias add /blinkga /pet "Aerial Armor" <me>
