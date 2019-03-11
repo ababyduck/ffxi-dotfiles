@@ -1,4 +1,5 @@
 # Aliases for use with ashita
+/alias add /cookie /item "Ginger Cookie" <me>
 /alias add /bl /ma "Blink" <me>
 /alias add /ss /ma "Stoneskin" <me>
 /alias add /av /ma "Aquaveil" <me>
@@ -41,6 +42,15 @@
 /alias add /garuda /ma "Garuda" <me>
 /alias add /shiva /ma "Shiva" <me>
 /alias add /ramuh /ma "Ramuh" <me>
+/alias add /lspirit /ma "Light Spirit" <me>
+/alias add /dspirit /ma "Dark Spirit" <me>
+/alias add /fspirit /ma "Fire Spirit" <me>
+/alias add /ispirit /ma "Ice Spirit" <me>
+/alias add /wispirit /ma "Wind Spirit" <me>
+/alias add /espirit /ma "Earth Spirit" <me>
+/alias add /tspirit /ma "Thunder Spirit" <me>
+/alias add /wspirit /ma "Water Spirit" <me>
+/alias add /waspirit /ma "Water Spirit" <me>
 /alias add /pnails /pet "Poison Nails" <stnpc>
 /alias add /hastega /pet "Hastega" <me>
 /alias add /blinkga /pet "Aerial Armor" <me>

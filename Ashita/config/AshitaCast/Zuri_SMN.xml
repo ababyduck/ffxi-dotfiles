@@ -23,7 +23,7 @@
             <ammo>Phtm. Tathlum</ammo>
             <head>Austere Hat</head>
             <body>Yinyang Robe</body>
-            <hands>Carbuncle Mitts</hands>
+            <hands>Summoner's Brcr.</hands>
             <legs>Evoker's Spats</legs>
             <feet>Rostrum Pumps</feet>
             <neck>Holy Phial</neck>
@@ -47,17 +47,19 @@
             <waist>Tilt Belt</waist>
         </set>
 
-        <set name="BloodPactDelay" baseset="Idle">
-            <head>Austere Hat</head>
-            <body>Yinyang Robe</body>
-            <legs>Summoner's Spats</legs>
-        </set>
-
         <set name="SummoningSkill" baseset="Idle">
             <head>Evoker's Horn</head>
             <!--<neck>Summoning Torque</neck>-->
             <body>Yinyang Robe</body>
+            <hads>Summoner's Brcr.</hads>
             <ring1>Evoker's Ring</ring1>
+        </set>
+
+        <set name="BPDelay" baseset="SummoningSkill">
+            <head>Austere Hat</head>
+            <body>Yinyang Robe</body>
+            <hads>Summoner's Brcr.</hads>
+            <legs>Summoner's Spats</legs>
         </set>
 
         <set name="PerpCost">
@@ -200,7 +202,9 @@
     </midmagic>
 
     <jobability>
-        <!-- TODO: Bloodpact logic -->
+        <if ad_type="bloodpact*">
+            <equip set="BPDelay" />
+        </if>
     </jobability>
 
     <weaponskill>
@@ -217,6 +221,7 @@
             <equip set="Idle" />
         </else>
 
+        <!-- TODO: Figure out why spirits aren't working here -->
         <if pet_name="Carbuncle|LightSpirit"><equip set="Carbuncle" /></if>
         <elseif pet_name="Fenrir|DarkSpirit"><equip set="Fenrir" /></elseif>
         <elseif pet_name="Ifrit|FireSpirit"><equip set="Ifrit" /></elseif>
@@ -226,6 +231,7 @@
         <elseif pet_name="Ramuh|ThunderSpirit"><equip set="Ramuh" /></elseif>
         <elseif pet_name="Leviathan|WaterSpirit"><equip set="Leviathan" /></elseif>
         <if pet_name="*Spirit">
+            <equip set="SummoningSkill" />
             <equip><legs>Summoner's Spats</legs></equip>
         </if>
 
