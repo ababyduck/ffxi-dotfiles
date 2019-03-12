@@ -60,4 +60,22 @@
     <weaponskill>
     </weaponskill>
 
+    <preranged>
+    </preranged>
+
+    <midranged>
+    </midranged>
+    
+    <idlegear>
+        <if p_status="resting">
+            <equip set="Resting" />
+        </if>
+        <elseif p_status="engaged">
+            <equip set="TP" />
+        </elseif>
+        <else>
+            <equip set="Idle" />
+        </else>
+    </idlegear>
+
 </ashitacast>
