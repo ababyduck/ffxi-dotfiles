@@ -106,6 +106,9 @@
     </sets>
 
     <variables>
+    	<!-- Set this to 1 if you normally play with /gearlock self on -->
+    	<var name="gearlockme">0</var>
+
     	<var name="autows">0</var>
     	<var name="kiting">0</var>
     	<var name="acc">0</var>
@@ -128,10 +131,14 @@
     		<if advanced="$kiting=0">
     			<setvar name="kiting" value="1" />
     			<addtochat color="50">Kiting mode ENABLED</addtochat>
+    			<command>/gl self on</command>
     		</if>
     		<else>
     			<setvar name="kiting" value="0" />
     			<addtochat color="50">Kiting mode DISABLED</addtochat>
+    			<if advanced="$gearlockme=0">
+    				<command>/gl self off</command>
+    			</if>
     		</else>
     	</cmd>
 
