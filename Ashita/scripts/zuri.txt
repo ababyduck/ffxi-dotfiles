@@ -25,7 +25,7 @@
 /load Duration
 
 /load GearLock
-#/gl self off
+/gl self off
 /gl others off
 /gl target on
 
@@ -46,6 +46,7 @@
 /addon load macrofix
 /addon load recast
 /addon load filterless
+/addon load debuff
 
 /addon load drawdistance
 /drawdistance setworld 6

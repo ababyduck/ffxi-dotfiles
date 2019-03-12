@@ -217,14 +217,15 @@
     </premagic>
 
     <midmagic>
-        <!-- TODO: Don't swap weapons if engaged -->
-        <!-- TODO: Cancel sneak/invis/stoneskin -->
-        <!--
-        <if BuffActive="358">
-            <clearbuff id="401" />
-        </if>
-        -->
         <equip set="Haste" />
+
+        <!-- Cancel Sneak/Stoneskin if we already have the buff (relies on debuff addon) -->
+        <if advanced="(%ad_name=Sneak)&(%at_type=self)&(%buffactive=71)">
+            <command delay="1500">/debuff 71</command>
+        </if>
+        <elseif advanced="(%ad_name=Stoneskin)&(%at_type=self)&(%buffactive=37)">
+            <command delay="6000">/debuff 37</command>
+        </elseif>
 
         <if ad_type="BardSong">
             <if at_type="monster">
