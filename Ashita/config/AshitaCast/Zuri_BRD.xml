@@ -329,6 +329,7 @@
             </equip>
         </if>
         <if buffactive="Sleep">
+            <equip set="Idle" />
             <equip><neck>Opo-opo Necklace</neck></equip>
         </if>
     </idlegear>

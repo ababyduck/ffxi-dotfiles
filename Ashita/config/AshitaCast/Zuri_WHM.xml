@@ -135,7 +135,7 @@
 
     <variables>
         <var name="melee">0</var>
-        
+
         <!-- Replace these with HQ/NQ variants depending on what you've got -->
         <var name="lightStaff">Light Staff</var>
         <var name="darkStaff">Dark Staff</var>
@@ -258,6 +258,7 @@
             </equip>
         </if>
         <if buffactive="Sleep">
+            <equip set="Idle" />
             <equip><neck>Opo-opo Necklace</neck></equip>
         </if>
     </idlegear>

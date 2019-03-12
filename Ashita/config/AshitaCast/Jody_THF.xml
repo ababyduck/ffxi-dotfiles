@@ -194,15 +194,7 @@
     </midmagic>
 
     <jobability>
-    	<if ad_name="Flee">
-    		<equip set="Flee" />
-    	</if>
-    	<elseif ad_name="Steal">
-    		<equip set="Steal" />
-    	</elseif>
-    	<elseif ad_name="Hide">
-    		<equip set="Hide" />
-    	</elseif>
+        <equip set="%ad_name" />
     </jobability>
 
     <weaponskill>
@@ -217,7 +209,9 @@
     <preranged>
     	<if eq_ammo="Bomb*|Tiphia*">
     		<addtochat color="50">Don't throw your stat ammo, dummy.</addtochat>
-    		<equip><ammo></ammo></equip>
+    		<equip>
+    			<ammo>Comet Tail</ammo>
+    		</equip>
     	</if>
     </preranged>
 
@@ -252,6 +246,9 @@
         <else>
             <equip set="Idle" />
         </else>
+        <if buffactive="Sneak Attack">
+        	<equip set="WS" />
+        </if>
 
 <!--         <if e_area="Bastok*">
             <equip>
@@ -260,6 +257,7 @@
             </equip>
         </if> -->
         <if buffactive="Sleep">
+        	<equip set="Idle" />
             <equip><neck>Opo-opo Necklace</neck></equip>
         </if>
     </idlegear>
