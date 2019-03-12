@@ -231,16 +231,18 @@
     </weaponskill>
 
     <preranged>
-    	<if eq_ammo="Tiphia*">
-    		<addtochat color="50">Don't throw your stat ammo, dummy.</addtochat>
-    		<equip>
-                <range>Lightning Bow</range>
-            </equip>
-    	</if>
+        <if eq_ammo="Bomb*|Tiphia*">
+            <cancel />
+            <addtochat color="50">Don't throw your stat ammo, dummy.</addtochat>
+        </if>
     </preranged>
 
     <midranged>
-    	<equip set="Ranged" />
+        <command>/gl self on</command>
+        <equip set="Ranged" />
+        <if advanced="$gearlockme=0">
+            <command delay="4500">/gl self off</command>
+        </if>
     </midranged>
 
     <idlegear>
