@@ -106,13 +106,26 @@
     </sets>
 
     <variables>
+    	<var name="autows">0</var>
     	<var name="kiting">0</var>
     </variables>
 
     <inputcommands>
     	<!-- TODO: Empress Ring command -->
+
+    	<cmd input="/autows">
+    		<if advanced="$autows=0">
+	    		<setvar name="autows" value="1" />
+	    		<addtochat color="50">Auto-WS mode ENABLED</addtochat>
+	    	</if>
+	    	<else>
+	    		<setvar name="autows" value="0" />
+	    		<addtochat color="50">Auto-WS mode DISABLED</addtochat>
+	    	</else>
+    	</cmd>
+
     	<cmd input="/kite">
-    		<if advanced="($kiting=0)">
+    		<if advanced="$kiting=0">
     			<setvar name="kiting" value="1" />
     			<addtochat color="50">Kiting mode ENABLED</addtochat>
     		</if>
@@ -121,6 +134,7 @@
     			<addtochat color="50">Kiting mode DISABLED</addtochat>
     		</else>
     	</cmd>
+
     </inputcommands>
 
     <premagic>
@@ -158,13 +172,20 @@
             <equip set="Resting" />
         </if>
         <elseif p_status="engaged">
-        	<!-- Swap dusk pieces for movement speed when engaged and moving -->
+
+        	<!-- If auto-WS mode is enabled and target is above 10% HP, do a thing -->
+	    	<if advanced="($autows=1)&(%p_tp>=1000)&(%at_hpp>10)">
+	    		<command>/ws "Dancing Edge" &lt;t&gt;</command>
+	    	</if>
+
+        	<!-- If kiting mode is enabled, swap dusk pieces for movement speed when engaged and moving -->
         	<if advanced="($kiting=1)&(%p_ismoving=true)">
         		<equip set="TP_Moving" />
         	</if>
         	<else>
             	<equip set="TP" />
             </else>
+
         </elseif>
         <else>
             <equip set="Idle" />
