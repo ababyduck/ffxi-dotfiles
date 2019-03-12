@@ -1,0 +1,8 @@
+assets/
+docs/
+ffxi-bootmod/
+logs/
+screenshots/
+/updates
+*.dll
+*.exe
