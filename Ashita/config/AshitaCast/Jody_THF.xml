@@ -57,6 +57,12 @@
         	<waist>Life Belt</waist>
         </set>
 
+        <set name="TP_Moving" baseset="TP">
+        	<hands>War Gloves</hands>
+        	<legs>Republic Subligar</legs>
+        	<feet>Strider Boots</feet>
+        </set>
+
         <set name="WS">
         	<ammo>Bomb Core</ammo>
         	<head>Emperor Hairpin</head> <!-- Hecatomb -->
@@ -141,7 +147,13 @@
             <equip set="Resting" />
         </if>
         <elseif p_status="engaged">
-            <equip set="TP" />
+        	<!-- Swap dusk pieces for movement speed when engaged and moving -->
+        	<if p_ismoving="true">
+        		<equip set="TP_Moving" />
+        	</if>
+        	<else>
+            	<equip set="TP" />
+            </else>
         </elseif>
         <else>
             <equip set="Idle" />
