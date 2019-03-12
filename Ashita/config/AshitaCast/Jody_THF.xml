@@ -24,7 +24,7 @@
 			<hands>War Gloves</hands>
 			<legs>Republic Subligar</legs>
 			<feet>Strider Boots</feet>
-			<neck>Peacock Charm</neck>
+			<neck>Evasion Torque</neck>
 			<waist>Scouter's Rope</waist>
 			<ear1>Cassie Earring</ear1>
 			<ear2>Intruder Earring</ear2>
@@ -106,10 +106,21 @@
     </sets>
 
     <variables>
+    	<var name="kiting">0</var>
     </variables>
 
     <inputcommands>
     	<!-- TODO: Empress Ring command -->
+    	<cmd input="/kite">
+    		<if advanced="($kiting=0)">
+    			<setvar name="kiting" value="1" />
+    			<addtochat color="50">Kiting mode ENABLED</addtochat>
+    		</if>
+    		<else>
+    			<setvar name="kiting" value="0" />
+    			<addtochat color="50">Kiting mode DISABLED</addtochat>
+    		</else>
+    	</cmd>
     </inputcommands>
 
     <premagic>
@@ -148,7 +159,7 @@
         </if>
         <elseif p_status="engaged">
         	<!-- Swap dusk pieces for movement speed when engaged and moving -->
-        	<if p_ismoving="true">
+        	<if advanced="($kiting=1)&(%p_ismoving=true)">
         		<equip set="TP_Moving" />
         	</if>
         	<else>
