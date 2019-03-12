@@ -1,0 +1,161 @@
+<ashitacast>
+
+    <settings>
+        <!--Determines if your idlegear will be parsed when you gain/lose a buff. Default: TRUE -->
+        <buffupdate>true</buffupdate>
+        <!--Determines if your idlegear will be parsed when you change status(stand/rest/engage/etc).  Default: TRUE -->
+        <statusupdate>true</statuspdate>
+        <!--Determines if your idlegear will be parsed when your HP % changes.  Default: TRUE -->
+        <hpupdate>false</hpupdate>
+        <!--Determines if your idlegear will be parsed on outgoing status updates(roughly every 350ms).  Default: TRUE-->
+        <autoupdate>true</autoupdate>
+    </settings>
+    
+    <init>
+        <command>/macro book 2</command>
+        <command delay="1000">/macro set 1</command>
+    </init>
+
+    <sets>
+		<set name="Idle">
+			<ammo>Bomb Core</ammo>
+			<head>Optical Hat</head>
+			<body>Scp. Harness +1</body>
+			<hands>War Gloves</hands>
+			<legs>Republic Subligar</legs>
+			<feet>Strider Boots</feet>
+			<neck>Peacock Charm</neck>
+			<waist>Scouter's Rope</waist>
+			<ear1>Cassie Earring</ear1>
+			<ear2>Intruder Earring</ear2>
+			<ring1>Phalanx Ring</ring1>
+			<ring2>Phalanx Ring</ring2>
+			<back>Bat Cape</back>
+		</set>
+
+        <set name="Resting" baseset="Idle">
+        </set>
+
+        <set name="TP" baseset="Idle">
+        	<!-- <ammo>Tiphia Sting</ammo> -->
+        	<head>Patroclus's Helm</head><!-- Walmart Turban -->
+        	<neck>Peacock Charm</neck>
+        	<ear1>Suppanomimi</ear1>
+        	<ear2>Optical Earring</ear2> <!-- Pixie -->
+        	<body>Scp. Harness +1</body> <!-- Raparee Harness -->
+            <hands>Dusk Gloves</hands>
+            <ring1>Sniper's Ring</ring1> <!-- +1s -->
+            <ring2>Sniper's Ring</ring2>
+            <waist>Speed Belt</waist>
+            <legs>Dusk Trousers</legs> <!-- Bravo's sub -->
+            <feet>Dusk Ledelsens</feet>
+        </set>
+
+        <set name="TP_Acc" baseset="TP">
+        	<head>Optical Hat</head>
+        	<hands>War Gloves</hands>
+        	<waist>Life Belt</waist>
+        </set>
+
+        <set name="WS">
+        	<ammo>Bomb Core</ammo>
+        	<head>Emperor Hairpin</head> <!-- Hecatomb -->
+        	<neck>Spike Necklace</neck>
+        	<ear1>Intruder Earring</ear1> <!-- Pixie -->
+        	<ear2>Spike Earring</ear2> <!-- Adroit -->
+        	<body>Assault Jerkin</body>
+        	<hands>Rogue's Armlets</hands> <!-- Hecatomb -->
+        	<ring1>Balance Ring</ring1> <!-- Thunder / Spinel -->
+        	<ring2>Balance Ring</ring2> <!-- Thunder / Spinel -->
+        	<back>Amemet Mantle +1</back> <!-- Forager's -->
+        	<waist>Ryl.Kgt. Belt</waist> <!-- Warwolf -->
+        	<legs>Dusk Trousers</legs> <!-- Hecatomb -->
+        	<feet>Leaping Boots</feet> <!-- Hecatomb -->
+        </set>
+
+        <set name="WS_Multihit" baseset="WS">
+        	<!-- <ammo>Tiphia Sting</ammo> -->
+        	<head>Optical Hat</head> <!-- Hecatomb -->
+        	<neck>Peacock Charm</neck>
+            <ring1>Sniper's Ring</ring1> <!-- +1s -->
+            <ring2>Sniper's Ring</ring2>
+            <waist>Life Belt</waist>
+        </set>
+
+        <set name="Steal">
+        	<head>Rogue's Bonnet</head>
+        	<hands>Rogue's Armlets</hands>
+        	<legs>Rogue's Culottes</legs>
+        	<feet>Rogue's Poulaines</feet>
+        </set>
+
+        <set name="Flee">
+        	<feet>Rogue's Poulaines</feet>
+        </set>
+
+        <set name="Hide">
+        	<body>Rogue's Vest</body>
+        </set>
+        
+    </sets>
+
+    <variables>
+    </variables>
+
+    <inputcommands>
+    	<!-- TODO: Empress Ring command -->
+    </inputcommands>
+
+    <premagic>
+    </premagic>
+
+    <midmagic>
+    	<if ad_name="Utsusemi*">
+    		<equip set="Idle" />
+    	</if>
+    </midmagic>
+
+    <jobability>
+    	<if ad_name="Flee">
+    		<equip set="Flee" />
+    	</if>
+    	<elseif ad_name="Steal">
+    		<equip set="Steal" />
+    	</elseif>
+    	<elseif ad_name="Hide">
+    		<equip set="Hide" />
+    	</elseif>
+    </jobability>
+
+    <weaponskill>
+    	<if ad_name="Dancing Edge|Evisceration">
+    		<equip set="WS_Multihit" />
+    	</if>
+    	<else>
+    		<equip set="WS" />
+    	</else>
+    </weaponskill>
+
+    <idlegear>
+        <if p_status="resting">
+            <equip set="Resting" />
+        </if>
+        <elseif p_status="engaged">
+            <equip set="TP" />
+        </elseif>
+        <else>
+            <equip set="Idle" />
+        </else>
+
+<!--         <if e_area="Bastok*">
+            <equip>
+                <head>Gala Corsage</head>
+                <body>Republic Aketon</body>
+            </equip>
+        </if> -->
+        <if buffactive="Sleep">
+            <equip><neck>Opo-opo Necklace</neck></equip>
+        </if>
+    </idlegear>
+
+</ashitacast>
