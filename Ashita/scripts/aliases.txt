@@ -40,6 +40,7 @@
 /alias add /warp /ma "Warp" <me>
 /alias add /esc /ma "Escape" <me>
 /alias add /maz /ma "Chocobo Mazurka" <me>
+/alias add /rmaz /ma "Raptor Mazurka" <me>
 /alias add /carbuncle /ma "Carbuncle" <me>
 /alias add /carb /ma "Carbuncle" <me>
 /alias add /fenrir /ma "Fenrir" <me>
