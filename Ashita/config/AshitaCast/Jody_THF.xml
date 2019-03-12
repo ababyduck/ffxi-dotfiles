@@ -46,6 +46,7 @@
             <hands>Dusk Gloves</hands>
             <ring1>Sniper's Ring</ring1> <!-- +1s -->
             <ring2>Sniper's Ring</ring2>
+            <back>Amemet Mantle +1</back>
             <waist>Speed Belt</waist>
             <legs>Dusk Trousers</legs> <!-- Bravo's sub -->
             <feet>Dusk Ledelsens</feet>
@@ -61,6 +62,17 @@
         	<hands>War Gloves</hands>
         	<legs>Republic Subligar</legs>
         	<feet>Strider Boots</feet>
+        </set>
+
+        <set name="Ranged">
+			<head>Optical Hat</head>
+        	<neck>Peacock Charm</neck>
+        	<hands>Rogue's Armlets</hands>
+            <ring1>Sniper's Ring</ring1>
+            <ring2>Sniper's Ring</ring2>
+            <back>Amemet Mantle +1</back>
+        	<waist>Ryl.Kgt. Belt</waist>
+        	<feet>Leaping Boots</feet>
         </set>
 
         <set name="WS">
@@ -109,21 +121,38 @@
     	<!-- Set this to 1 if you normally play with /gearlock self on -->
     	<var name="gearlockme">0</var>
 
-    	<var name="autows">0</var>
-    	<var name="kiting">0</var>
     	<var name="acc">0</var>
+    	<var name="pulling">0</var>
+    	<var name="kiting">0</var>
+    	<var name="autows">0</var>
+
     </variables>
 
     <inputcommands>
 
-    	<cmd input="/autows">
-    		<if advanced="$autows=0">
-	    		<setvar name="autows" value="1" />
-	    		<addtochat color="50">Auto-WS mode ENABLED</addtochat>
+    	<cmd input="/acc">
+    		<if advanced="$acc=0">
+    			<setvar name="acc" value="1" />
+    			<addtochat color="50">Accuracy mode ENABLED</addtochat>
+    		</if>
+    		<else>
+    			<setvar name="acc" value="0" />
+    			<addtochat color="50">Accuracy mode DISABLED</addtochat>
+    		</else>
+    	</cmd>
+
+    	<cmd input="/pulling">
+    		<if advanced="$pulling=0">
+	    		<setvar name="pulling" value="1" />
+	    		<addtochat color="50">Pulling mode ENABLED</addtochat>
+	    		<command>/ac disable range</command>
+	    		<command>/ac disable ammo</command>
 	    	</if>
 	    	<else>
-	    		<setvar name="autows" value="0" />
-	    		<addtochat color="50">Auto-WS mode DISABLED</addtochat>
+	    		<setvar name="pulling" value="0" />
+	    		<addtochat color="50">Pulling mode DISABLED</addtochat>
+	    		<command>/ac enable range</command>
+	    		<command>/ac enable ammo</command>
 	    	</else>
     	</cmd>
 
@@ -142,15 +171,15 @@
     		</else>
     	</cmd>
 
-    	<cmd input="/acc">
-    		<if advanced="$acc=0">
-    			<setvar name="acc" value="1" />
-    			<addtochat color="50">Accuracy mode ENABLED</addtochat>
-    		</if>
-    		<else>
-    			<setvar name="acc" value="0" />
-    			<addtochat color="50">Accuracy mode DISABLED</addtochat>
-    		</else>
+    	<cmd input="/autows">
+    		<if advanced="$autows=0">
+	    		<setvar name="autows" value="1" />
+	    		<addtochat color="50">Auto-WS mode ENABLED</addtochat>
+	    	</if>
+	    	<else>
+	    		<setvar name="autows" value="0" />
+	    		<addtochat color="50">Auto-WS mode DISABLED</addtochat>
+	    	</else>
     	</cmd>
 
     </inputcommands>
@@ -184,6 +213,17 @@
     		<equip set="WS" />
     	</else>
     </weaponskill>
+
+    <preranged>
+    	<if eq_ammo="Bomb*|Tiphia*">
+    		<addtochat color="50">Don't throw your stat ammo, dummy.</addtochat>
+    		<equip><ammo></ammo></equip>
+    	</if>
+    </preranged>
+
+    <midranged>
+    	<equip set="Ranged" />
+    </midranged>
 
     <idlegear>
         <if p_status="resting">
