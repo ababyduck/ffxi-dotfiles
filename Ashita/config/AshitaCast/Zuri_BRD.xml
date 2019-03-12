@@ -54,6 +54,16 @@
             <waist>Tilt Belt</waist>
         </set>
 
+        <set name="Melee" baseset="TP">
+            <main>Joyeuse</main>
+            <sub>Genbu's Shield</sub>
+            <range>Oliphant</range>
+        </set>
+
+        <set name="Melee-nin" baseset="Melee">
+            <sub>Nightmare Sword</sub>
+        </set>
+
         <set name="CHR" baseset="Idle">
             <main>Monster Signa</main>
             <range>San d'Orian Horn</range>
@@ -155,6 +165,8 @@
     </sets>
 
     <variables>
+        <var name="melee">0</var>
+
         <!-- Replace these with HQ/NQ variants depending on what you've got -->
         <var name="lightStaff">Light Staff</var>
         <var name="darkStaff">Dark Staff</var>
@@ -167,12 +179,32 @@
     </variables>
 
     <inputcommands>
+
         <cmd input="/melee">
-            <equip lock="true">
-                <main>Joyeuse</main>
-                <sub>Genbu's Shield</sub>
-            </equip>
+            <if advanced="$melee=0">
+                <setvar name="melee" value="1" />
+                <addtochat color="50">Melee mode ENABLED</addtochat>
+                <if advanced="%p_subjob=nin">
+                    <equip set="Melee-nin" />
+                </if>
+                <else>
+                    <equip set="Melee" />
+                </else>
+                <command>/ac disable main</command>
+                <command>/ac disable sub</command>
+                <command>/ac disable range</command>
+                <command>/ac disable ammo</command>
+            </if>
+            <else>
+                <setvar name="melee" value="0" />
+                <addtochat color="50">Melee mode DISABLED</addtochat>
+                <command>/ac enable main</command>
+                <command>/ac enable sub</command>
+                <command>/ac enable range</command>
+                <command>/ac enable ammo</command>
+            </else>
         </cmd>
+
     </inputcommands>
 
     <premagic>
