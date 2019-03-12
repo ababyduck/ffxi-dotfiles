@@ -1,0 +1,287 @@
+<ashitacast>
+
+    <settings>
+        <!--Determines if your idlegear will be parsed when you gain/lose a buff. Default: TRUE -->
+        <buffupdate>true</buffupdate>
+        <!--Determines if your idlegear will be parsed when you change status(stand/rest/engage/etc).  Default: TRUE -->
+        <statusupdate>true</statuspdate>
+        <!--Determines if your idlegear will be parsed when your HP % changes.  Default: TRUE -->
+        <hpupdate>false</hpupdate>
+        <!--Determines if your idlegear will be parsed on outgoing status updates(roughly every 350ms).  Default: TRUE-->
+        <autoupdate>true</autoupdate>
+    </settings>
+    
+    <init>
+        <command>/macro book 1</command>
+        <if p_subjob="war">
+            <command delay="1000">/macro set 1</command>
+        </if>
+        <elseif p_subjob="thf">
+            <command delay="1000">/macro set 1</command>
+        </elseif>
+        <elseif p_subjob="nin">
+            <command delay="1000">/macro set 3</command>
+        </elseif>
+    </init>
+
+    <sets>
+        <set name="Idle">
+            <head>Optical Hat</head>
+            <body>Scp. Harness +1</body>
+            <hands>Saotome Kote</hands>
+            <legs>Byakko's Haidate</legs>
+            <feet>Myochin Sune-Ate</feet>
+            <neck>Evasion Torque</neck>
+            <waist>Scouter's Rope</waist>
+            <ear1>Cassie Earring</ear1>
+            <ear2>Intruder Earring</ear2>
+            <ring1>Phalanx Ring</ring1>
+            <ring2>Phalanx Ring</ring2>
+            <back>Bat Cape</back>
+        </set>
+
+        <set name="Resting" baseset="Idle">
+        </set>
+
+        <set name="Town">
+            <main>Hagun</main>
+            <body>Hara-Ate +1</body>
+            <hands>Saotome Kote</hands>
+            <waist>Speed Belt</waist>
+            <legs>Myochin Haidate</legs>
+            <feet>Sune-Ate +1</feet>
+        </set>
+
+        <set name="TP">
+            <!-- <ammo>Tiphia Sting</ammo> -->
+            <head>Ace's Helm</head>
+            <body>Haubergeon</body>
+            <hands>Dusk Gloves</hands>
+            <legs>Byakko's Haidate</legs>
+            <feet>Fuma Kyahan</feet>
+            <neck>Peacock Charm</neck>
+            <waist>Speed Belt</waist>
+            <ear1>Cassie Earring</ear1>
+            <ear2>Spike Earring</ear2>
+            <ring1>Sniper's Ring</ring1>
+            <ring2>Sniper's Ring</ring2>
+            <back>Amemet Mantle +1</back>
+        </set>
+
+        <set name="TP_Acc" baseset="TP">
+        	<head>Optical Hat</head>
+        	<hands>War Gloves</hands>
+        	<waist>Life Belt</waist>
+        </set>
+
+        <set name="TP_Moving">
+        	<hands>Saotome Kote</hands>
+        	<legs>Republic Subligar</legs>
+        	<feet>Fuma Kyahan</feet>
+        </set>
+
+        <set name="Ranged">
+			<head>Optical Hat</head>
+        	<neck>Peacock Charm</neck>
+        	<hands>Rogue's Armlets</hands>
+            <ring1>Sniper's Ring</ring1>
+            <ring2>Sniper's Ring</ring2>
+            <back>Amemet Mantle +1</back>
+        	<waist>Ryl.Kgt. Belt</waist>
+            <legs>Byakko's Haidate</legs>
+        	<feet>Leaping Boots</feet>
+        </set>
+
+        <set name="WS">
+        	<ammo>Bomb Core</ammo>
+        	<head>Wyvern Helm</head>
+        	<neck>Spike Necklace</neck>
+        	<ear1>Cassie Earring</ear1>
+        	<ear2>Spike Earring</ear2>
+        	<body>Haubergeon</body>
+        	<hands>Pallas's Bracelets</hands>
+        	<ring1>Garnet Ring</ring1>
+        	<ring2>Garnet Ring</ring2>
+        	<back>Amemet Mantle +1</back> <!-- Forager's -->
+        	<waist>Ryl.Kgt. Belt</waist> <!-- Warwolf -->
+        	<legs>Shura Haidate</legs>
+        	<feet>Dusk Ledelsens</feet>
+        </set>
+
+        <set name="WS_Multihit" baseset="WS">
+        	<!-- <ammo>Tiphia Sting</ammo> -->
+        	<head>Optical Hat</head>
+        	<neck>Peacock Charm</neck>
+            <ear1>Intruder Earring</ear1>
+            <ring1>Sniper's Ring</ring1>
+            <ring2>Sniper's Ring</ring2>
+            <waist>Life Belt</waist>
+        </set>
+
+        <set name="Meditate">
+            <head>Myochin Kabuto</head>
+            <hands>Saotome Kote</hands>
+        </set>
+
+        <set name="Warding Circle">
+            <head>Myochin Kabuto</head>
+        </set>
+
+        <set name="Provoke">
+            <hands>Myochin Kote</hands>
+            <back>Resentment Cape</back>
+            <waist>Corsette +1</waist>
+            <feet>Myochin Sune-ate</feet>
+        </set>
+        
+    </sets>
+
+    <variables>
+    	<!-- Set this to 1 if you normally play with /gearlock self on -->
+    	<var name="gearlockme">0</var>
+
+    	<var name="acc">0</var>
+    	<var name="pulling">0</var>
+    	<var name="kiting">0</var>
+    	<var name="autows">0</var>
+
+    </variables>
+
+    <inputcommands>
+
+        <cmd input="/towngear">
+            <command>/ac naked</command>
+            <command delay="500">/ac enable</command>
+        </cmd>
+
+    	<cmd input="/acc">
+    		<if advanced="$acc=0">
+    			<setvar name="acc" value="1" />
+    			<addtochat color="50">Accuracy mode ENABLED</addtochat>
+    		</if>
+    		<else>
+    			<setvar name="acc" value="0" />
+    			<addtochat color="50">Accuracy mode DISABLED</addtochat>
+    		</else>
+    	</cmd>
+
+    	<cmd input="/pulling">
+    		<if advanced="$pulling=0">
+	    		<setvar name="pulling" value="1" />
+	    		<addtochat color="50">Pulling mode ENABLED</addtochat>
+	    		<command>/ac disable range</command>
+	    		<command>/ac disable ammo</command>
+	    	</if>
+	    	<else>
+	    		<setvar name="pulling" value="0" />
+	    		<addtochat color="50">Pulling mode DISABLED</addtochat>
+	    		<command>/ac enable range</command>
+	    		<command>/ac enable ammo</command>
+	    	</else>
+    	</cmd>
+
+    	<cmd input="/kite">
+    		<if advanced="$kiting=0">
+    			<setvar name="kiting" value="1" />
+    			<addtochat color="50">Kiting mode ENABLED</addtochat>
+    			<command>/gl self on</command>
+    		</if>
+    		<else>
+    			<setvar name="kiting" value="0" />
+    			<addtochat color="50">Kiting mode DISABLED</addtochat>
+    			<if advanced="$gearlockme=0">
+    				<command>/gl self off</command>
+    			</if>
+    		</else>
+    	</cmd>
+
+    	<cmd input="/autows">
+    		<if advanced="$autows=0">
+	    		<setvar name="autows" value="1" />
+	    		<addtochat color="50">Auto-WS mode ENABLED</addtochat>
+	    	</if>
+	    	<else>
+	    		<setvar name="autows" value="0" />
+	    		<addtochat color="50">Auto-WS mode DISABLED</addtochat>
+	    	</else>
+    	</cmd>
+
+    </inputcommands>
+
+    <premagic>
+    </premagic>
+
+    <midmagic>
+    	<if ad_name="Utsusemi*">
+    		<equip set="Idle" />
+    	</if>
+    </midmagic>
+
+    <jobability>
+        <equip set="%ad_name" />
+    </jobability>
+
+    <weaponskill>
+    	<if ad_name="Penta Thrust">
+    		<equip set="WS_Multihit" />
+    	</if>
+    	<else>
+    		<equip set="WS" />
+    	</else>
+    </weaponskill>
+
+    <preranged>
+    	<if eq_ammo="Tiphia*">
+    		<addtochat color="50">Don't throw your stat ammo, dummy.</addtochat>
+    		<equip>
+                <range>Lightning Bow</range>
+            </equip>
+    	</if>
+    </preranged>
+
+    <midranged>
+    	<equip set="Ranged" />
+    </midranged>
+
+    <idlegear>
+        <if p_status="resting">
+            <equip set="Resting" />
+        </if>
+        <elseif p_status="engaged">
+
+        	<!-- If auto-WS mode is enabled and target is above 10% HP, do a thing -->
+	    	<if advanced="($autows=1)&(%p_tp>=1000)&(%at_hpp>10)">
+	    		<command>/ws "Tachi: Gekko" &lt;t&gt;</command>
+                <command>/ws "Penta Thrust" &lt;t&gt;</command>
+	    	</if>
+
+	    	<if advanced="$acc=1">
+	    		<equip set="TP_Acc" />
+	    	</if>
+	    	<else>
+	    		<equip set="TP" />
+	    	</else>
+
+        	<!-- If kiting mode is enabled, swap dusk pieces for movement speed when engaged and moving -->
+        	<if advanced="($kiting=1)&(%p_ismoving=true)">
+        		<equip set="TP_Moving" />
+        	</if>
+
+        </elseif>
+        <else>
+            <equip set="Idle" />
+        </else>
+
+        <!-- Town gear
+        <if e_area="Ru'Lude*|*Jeuno|Port*|*d'Oria|Bastok*|Metalworks|Windurst*|Heaven's*|Norg|Rabao|Tavnazia*|*Zahbi|*Whitegate|Nashmau">
+            <equip set="Town" />
+        </if>
+        -->
+
+        <if buffactive="Sleep">
+            <equip set="Idle" />
+            <equip><neck>Opo-opo Necklace</neck></equip>
+        </if>
+    </idlegear>
+
+</ashitacast>
