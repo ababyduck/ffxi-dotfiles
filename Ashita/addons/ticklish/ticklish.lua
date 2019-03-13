@@ -8,7 +8,7 @@ _addon.version = '0.1';
 require 'common'
 
 ----------------------------------------------------------------------------------------------------
--- Configurations
+-- Config
 ----------------------------------------------------------------------------------------------------
 local default_config = 
 {
@@ -22,19 +22,9 @@ local default_config =
     show_ticks        = false,
     show_hp_recovered = false,
     show_mp_recovered = false,
-    debug             = true
+    debug             = false
 };
 local ticklish_config = default_config;
-
-----------------------------------------------------------------------------------------------------
--- func: msg
--- desc: Prints out a message with the Nomad tag at the front.
-----------------------------------------------------------------------------------------------------
-local function msg(s)
-    local timestamp = os.date(string.format('\31\%c[%s]\30\01 ', 200, '%H:%M:%S'));
-    local txt = timestamp .. '\31\200[\31\05' .. _addon.name .. '\31\200]\31\130 ' .. s;
-    print(txt);
-end
 
 ----------------------------------------------------------------------------------------------------
 -- func: load
@@ -88,6 +78,40 @@ ashita.register_event('unload', function()
 
     -- Delete the font object..
     AshitaCore:GetFontManager():Delete('__ticklish_addon');
+end);
+
+----------------------------------------------------------------------------------------------------
+-- func: msg
+-- desc: Prints out a message with the Nomad tag at the front.
+----------------------------------------------------------------------------------------------------
+local function msg(s)
+    local timestamp = os.date(string.format('\31\%c[%s]\30\01 ', 200, '%H:%M:%S'));
+    local txt = timestamp .. '\31\200[\31\05' .. _addon.name .. '\31\200]\31\130 ' .. s;
+    print(txt);
+end
+
+----------------------------------------------------------------------------------------------------
+-- func: command
+-- desc: Event called when a command was entered.
+----------------------------------------------------------------------------------------------------
+ashita.register_event('command', function(command, ntype)
+    -- Get the arguments of the command..
+    local args = command:args();
+    if (args[1] ~= '/ticklish') then
+        return false;
+    end
+
+    -- Toggle debug mode
+    if (args[2] == 'debug') then
+        ticklish_config.debug = not ticklish_config.debug;
+        if ticklish_config.debug == false then
+            msg('Debug output disabled')
+        else
+            msg('Debug output enabled')
+        end
+        return true;
+    end
+
 end);
 
 ---------------------------------------------------------------------------------------------------
