@@ -31,7 +31,8 @@ local ticklish_config = default_config;
 -- desc: Prints out a message with the Nomad tag at the front.
 ----------------------------------------------------------------------------------------------------
 local function msg(s)
-    local txt = '\31\200[\31\05' .. _addon.name .. '\31\200]\31\130 ' .. s;
+    local timestamp = os.date(string.format('\31\%c[%s]\30\01 ', 200, '%H:%M:%S'));
+    local txt = timestamp .. '\31\200[\31\05' .. _addon.name .. '\31\200]\31\130 ' .. s;
     print(txt);
 end
 
