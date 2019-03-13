@@ -35,13 +35,10 @@ ashita.register_event('load', function()
     playerIsResting = false;
     currentTick = 0;
     currentDelay = 20;
-    restPacket = 
-    {
-        call     = false,
-        response = false
-    }
+    restPacketSent = false;
     restTimer = 
     {
+        first     = {},
         last      = {},
         delta     = {},
         deltaText = ''
@@ -121,7 +118,7 @@ end);
 ashita.register_event('outgoing_packet', function(id, size, data)
     -- Listen for heal toggle packet
     if (id == 0x0E8) then
-        restPacket.call = true;
+        restPacketSent = true;
         if (ticklish_config.debug) then msg('DEBUG: Detected outgoing heal toggle packet [0x0E8]') end;
     end
 
@@ -138,21 +135,23 @@ ashita.register_event('incoming_packet', function(id, size, data)
         if (ticklish_config.debug) then msg('DEBUG: Detected incoming character update packet [0x037]') end;
         local packet = data:totable()
         local playerStatus = packet[0x31];
-
-        -- If the server tells us we're resting, we're resting.
         playerIsResting = (playerStatus == 33);
 
         if (playerIsResting) then
-
-            -- Keep track of how many ticks we've rested
-            currentTick = currentTick + 1;
-
-            if (ticklish_config.debug) then
-                msg('DEBUG: currentTick is ' .. currentTick);
+            -- If this is the first resting update received since sending /heal, record the time
+            if (restPacketSent) then
+                restTimer.first = os.time();
+                restPacketSent = false;
             end
 
+            -- Keep track of how many ticks we've rested
+            -- TODO: discard (or count separately) update packets that are not related to resting
+            currentTick = currentTick + 1;
+            if (ticklish_config.debug) then msg('DEBUG: currentTick is ' .. currentTick) end;
+            
             -- Set time since last resting update to now
             restTimer.last = os.time();
+
         else
             -- When we're no longer resting, reset tick counter to 0
             currentTick = 0;
@@ -191,7 +190,6 @@ ashita.register_event('render', function()
 
         -- And finally, update the text
         restTimer.deltaText = tostring(currentDelay - restTimer.deltaText);
-
         f:SetText(restTimer.deltaText);
     else
         -- If we're not resting, blank out the timer
