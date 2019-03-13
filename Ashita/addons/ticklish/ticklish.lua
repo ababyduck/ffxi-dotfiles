@@ -19,8 +19,10 @@ local default_config =
         color       = 0xFFFFFFFF,
         position    = { -155, -210 },
     },
-    show_ticks   = false,
-    debug        = true
+    show_ticks        = false,
+    show_hp_recovered = false,
+    show_mp_recovered = false,
+    debug             = true
 };
 local ticklish_config = default_config;
 
@@ -41,12 +43,18 @@ ashita.register_event('load', function()
     -- Set up initial vars
     playerIsResting = false;
     currentTick = 0;
-
-    -- Create the timer
-    ashita.timer.create_timer("restTimer");
-    if (ticklish_config.debug and ashita.timer.is_timer("restTimer")) then
-        msg('DEBUG: Successfully created timer.')
-    end
+    currentDelay = 20;
+    restPacket = 
+    {
+        call     = false,
+        response = false
+    }
+    restTimer = 
+    {
+        last      = {},
+        delta     = {},
+        deltaText = ''
+    };
 
     -- Load the configuration file..
     ticklish_config = ashita.settings.load_merged(_addon.path .. '/settings/settings.json', ticklish_config);
@@ -68,9 +76,6 @@ end);
 -- desc: Event called when the addon is being unloaded.
 ----------------------------------------------------------------------------------------------------
 ashita.register_event('unload', function()
-    -- Delete the timer
-    ashita.timer.remove_timer("restTimer");
-
     -- Get the font object..
     local f = AshitaCore:GetFontManager():Get('__ticklish_addon');
 
@@ -96,12 +101,22 @@ ashita.register_event('incoming_packet', function(id, size, data)
 
         -- If the server tells us we're resting, we're resting.
         playerIsResting = (playerStatus == 33);
+
         if playerIsResting then
-            -- TODO: Start timer
+            -- Keep track of how many ticks we've rested
+            currentTick = currentTick + 1;
+            if (ticklish_config.debug) then
+                msg('DEBUG: currentTick is ' .. currentTick);
+            end
+
+            -- Set time since last resting update to now
+            restTimer.last = os.time();
         else
-            -- TODO: Stop timer
+            -- When we're no longer resting, reset tick counter to 0
+            currentTick = 0;
         end
 
+        -- Uncomment to show full packet data
         -- for k, v in pairs(packet) do
         --     print(k .. ': ' .. v);
         -- end
@@ -120,11 +135,28 @@ ashita.register_event('render', function()
     local f = AshitaCore:GetFontManager():Get('__ticklish_addon');
     if (f == nil) then return; end
 
-    -- If we're resting, start the timer
     if (playerIsResting) then
-        -- TODO: update the font object to display the current timer
-        f:SetText('20');
+        -- Update the time since our last resting tick
+        restTimer.delta = (os.time() - restTimer.last);
+        restTimer.deltaText = os.date('%S', restTimer.delta)
+
+        -- Determine delay in seconds for the current resting tick
+        if currentTick > 1 then
+            currentDelay = 10;
+        elseif currentTick == 1 then
+            currentDelay = 20;
+        end
+
+        -- And finally, update the text
+        if (ticklish_config.debug) then
+            msg('DEBUG: ' .. restTimer.deltaText .. '/' .. currentDelay);
+        end
+
+        restTimer.deltaText = tostring(currentDelay - restTimer.deltaText);
+
+        f:SetText(restTimer.deltaText);
     else
+        -- If we're not resting, blank out the timer
         f:SetText('');
     end
 
