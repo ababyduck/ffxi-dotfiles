@@ -139,21 +139,27 @@ ashita.register_event('incoming_packet', function(id, size, data)
         playerIsResting = (playerStatus == 33);
 
         if (playerIsResting) then
-            -- If this is the first resting update received since sending /heal, record the time
+            -- Time since last resting update is now
+            restTimer.last = os.time();
+
+            -- If this is the first resting update received since sending /heal, record that too
             if (restPacketSent) then
-                restTimer.first = os.time();
+                restTimer.first = restTimer.last;
                 restPacketSent = false;
             end
 
-
+            -- Update deltas
+            restTimer.deltaFirst = (restTimer.last - restTimer.first);
+            msg(restTimer.deltaFirst)
+            -- if (os.date('%S', restTimer.deltaFirst) > 8) then
+            --     msg('probably a healing tick')
+            -- end
 
             -- Keep track of how many ticks we've rested
             -- TODO: discard (or count separately) update packets that are not related to resting
             currentTick = currentTick + 1;
             if (ticklish_config.debug) then msg('DEBUG: currentTick is ' .. currentTick) end;
             
-            -- Set time since last resting update to now
-            restTimer.last = os.time();
 
         else
             -- When we're no longer resting, reset tick counter to 0
