@@ -323,7 +323,7 @@
             <equip set="Idle" />
         </else>
 
-        <if e_area="Bastok*">
+        <if e_area="*Bastok*|Metalworks">
             <equip>
                 <head>Gala Corsage</head>
                 <body>Republic Aketon</body>
