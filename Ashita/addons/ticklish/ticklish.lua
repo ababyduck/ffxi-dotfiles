@@ -8,12 +8,6 @@ _addon.version = '0.1';
 require 'common'
 
 ----------------------------------------------------------------------------------------------------
--- Variables
-----------------------------------------------------------------------------------------------------
-local playerIsResting = false
-local currentTick = 0
-
-----------------------------------------------------------------------------------------------------
 -- Configurations
 ----------------------------------------------------------------------------------------------------
 local default_config = 
@@ -25,7 +19,8 @@ local default_config =
         color       = 0xFFFFFFFF,
         position    = { -155, -210 },
     },
-    show_ticks   = false
+    show_ticks   = false,
+    debug        = true
 };
 local ticklish_config = default_config;
 
@@ -43,8 +38,18 @@ end
 -- desc: Event called when the addon is being loaded.
 ----------------------------------------------------------------------------------------------------
 ashita.register_event('load', function()
+    -- Set up initial vars
+    playerIsResting = false;
+    currentTick = 0;
+
+    -- Create the timer
+    ashita.timer.create_timer("restTimer");
+    if (ticklish_config.debug and ashita.timer.is_timer("restTimer")) then
+        msg('DEBUG: Successfully created timer.')
+    end
+
     -- Load the configuration file..
-    --ticklish_config = ashita.settings.load_merged(_addon.path .. '/settings/settings.json', ticklish_config);
+    ticklish_config = ashita.settings.load_merged(_addon.path .. '/settings/settings.json', ticklish_config);
 
     -- Create the font object..
     local f = AshitaCore:GetFontManager():Create('__ticklish_addon');
@@ -63,6 +68,9 @@ end);
 -- desc: Event called when the addon is being unloaded.
 ----------------------------------------------------------------------------------------------------
 ashita.register_event('unload', function()
+    -- Delete the timer
+    ashita.timer.remove_timer("restTimer");
+
     -- Get the font object..
     local f = AshitaCore:GetFontManager():Get('__ticklish_addon');
 
@@ -81,20 +89,22 @@ end);
 -- desc: Called when our addon receives an incoming packet.
 ---------------------------------------------------------------------------------------------------
 ashita.register_event('incoming_packet', function(id, size, data)
-    -- Listen for char update packet and read the player status
+    -- Listen for character update packet and read the address that contains player status
     if (id == 0x037) then
         local packet = data:totable()
         local playerStatus = packet[0x31];
 
+        -- If the server tells us we're resting, we're resting.
+        playerIsResting = (playerStatus == 33);
+        if playerIsResting then
+            -- TODO: Start timer
+        else
+            -- TODO: Stop timer
+        end
+
         -- for k, v in pairs(packet) do
         --     print(k .. ': ' .. v);
         -- end
-
-        if (playerStatus == 33) then
-            playerIsResting = true;
-        else
-            playerIsResting = false;
-        end
 
     end
 
@@ -112,10 +122,9 @@ ashita.register_event('render', function()
 
     -- If we're resting, start the timer
     if (playerIsResting) then
-        -- TODO: Start the timer
+        -- TODO: update the font object to display the current timer
         f:SetText('20');
     else
-        -- TODO: Stop the timer
         f:SetText('');
     end
 
