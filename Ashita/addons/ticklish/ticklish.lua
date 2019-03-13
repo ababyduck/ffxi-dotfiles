@@ -38,10 +38,11 @@ ashita.register_event('load', function()
     restPacketSent = false;
     restTimer = 
     {
-        first     = {},
-        last      = {},
-        delta     = {},
-        deltaText = ''
+        first      = {},
+        last       = {},
+        deltaFirst = {},
+        deltaLast  = {},
+        label      = {}
     };
 
     -- Load the configuration file..
@@ -144,6 +145,8 @@ ashita.register_event('incoming_packet', function(id, size, data)
                 restPacketSent = false;
             end
 
+
+
             -- Keep track of how many ticks we've rested
             -- TODO: discard (or count separately) update packets that are not related to resting
             currentTick = currentTick + 1;
@@ -155,6 +158,9 @@ ashita.register_event('incoming_packet', function(id, size, data)
         else
             -- When we're no longer resting, reset tick counter to 0
             currentTick = 0;
+
+            -- TODO: Show total hp/mp recovered and number of ticks / time rested
+
         end
 
         -- Uncomment to show full packet data
@@ -178,8 +184,8 @@ ashita.register_event('render', function()
 
     if (playerIsResting) then
         -- Update the time since our last resting tick
-        restTimer.delta = (os.time() - restTimer.last);
-        restTimer.deltaText = os.date('%S', restTimer.delta)
+        restTimer.deltaLast = (os.time() - restTimer.last);
+        restTimer.label = os.date('%S', restTimer.deltaLast)
 
         -- Determine delay in seconds for the current resting tick
         if currentTick > 1 then
@@ -189,8 +195,8 @@ ashita.register_event('render', function()
         end
 
         -- And finally, update the text
-        restTimer.deltaText = tostring(currentDelay - restTimer.deltaText);
-        f:SetText(restTimer.deltaText);
+        restTimer.label = tostring(currentDelay - restTimer.label);
+        f:SetText(restTimer.label);
     else
         -- If we're not resting, blank out the timer
         f:SetText('');
