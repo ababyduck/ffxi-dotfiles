@@ -1,7 +1,7 @@
 -- This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.
 -- https://creativecommons.org/licenses/by-nc/4.0/
 
-_addon.author = 'ababyduck';
+_addon.author = 'Zuri';
 _addon.name = 'ticklish';
 _addon.version = '0.1';
 
@@ -90,21 +90,38 @@ ashita.register_event('unload', function()
 end);
 
 ---------------------------------------------------------------------------------------------------
+-- func: outgoing_packet
+-- desc: Called when our addon receives an outgoing packet.
+---------------------------------------------------------------------------------------------------
+ashita.register_event('outgoing_packet', function(id, size, data)
+    -- Listen for heal toggle packet
+    if (id == 0x0E8) then
+        restPacket.call = true;
+        if (ticklish_config.debug) then msg('DEBUG: Detected outgoing heal toggle packet [0x0E8]') end;
+    end
+
+    return false;
+end);
+
+---------------------------------------------------------------------------------------------------
 -- func: incoming_packet
 -- desc: Called when our addon receives an incoming packet.
 ---------------------------------------------------------------------------------------------------
 ashita.register_event('incoming_packet', function(id, size, data)
     -- Listen for character update packet and read the address that contains player status
     if (id == 0x037) then
+        if (ticklish_config.debug) then msg('DEBUG: Detected incoming character update packet [0x037]') end;
         local packet = data:totable()
         local playerStatus = packet[0x31];
 
         -- If the server tells us we're resting, we're resting.
         playerIsResting = (playerStatus == 33);
 
-        if playerIsResting then
+        if (playerIsResting) then
+
             -- Keep track of how many ticks we've rested
             currentTick = currentTick + 1;
+
             if (ticklish_config.debug) then
                 msg('DEBUG: currentTick is ' .. currentTick);
             end
@@ -148,10 +165,6 @@ ashita.register_event('render', function()
         end
 
         -- And finally, update the text
-        if (ticklish_config.debug) then
-            msg('DEBUG: ' .. restTimer.deltaText .. '/' .. currentDelay);
-        end
-
         restTimer.deltaText = tostring(currentDelay - restTimer.deltaText);
 
         f:SetText(restTimer.deltaText);
