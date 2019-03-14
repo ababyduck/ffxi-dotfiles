@@ -12,55 +12,47 @@
     </settings>
 
     <init>
-        <command>/macro book 5</command>
+        <command>/macro book 1</command>
         <command delay="1000">/macro set 1</command>
     </init>
     
     <sets>
         <set name="Idle">
-            <main>Earth Staff</main>
-            <sub>Raptor Strap +1</sub>
-            <ammo>Phtm. Tathlum</ammo>
+            <main>$earthStaff</main>
+            <sub>Raptor Strap</sub>
+            <ammo>Morion Tathlum</ammo>
             <head>Austere Hat</head>
             <body>Yinyang Robe</body>
-            <hands>Summoner's Brcr.</hands>
+            <hands>Carbuncle Mitts</hands>
             <legs>Evoker's Spats</legs>
-            <feet>Rostrum Pumps</feet>
-            <neck>Holy Phial</neck>
-            <waist>Mohbwa Sash +1</waist>
-            <ear1>Melody Earring +1</ear1>
-            <ear2>Melody Earring +1</ear2>
+            <feet>Wonder Clomps</feet>
+            <neck>Justice Badge</neck>
+            <waist>Qiqirn Sash</waist>
             <ring1>Evoker's Ring</ring1>
-            <ring2>Serket Ring</ring2>
-            <back>Blue Cape</back>
+            <ring2>Vilma's Ring</ring2>
         </set>
 
         <set name="Resting" baseset="Idle">
-            <main>Dark Staff</main>
-            <sub>Raptor Strap +1</sub>
+            <main>$darkStaff</main>
+            <sub>Raptor Strap</sub>
             <body>Yinyang Robe</body>
             <legs>Baron's Slops</legs>
-            <waist>Mohbwa Sash +1</waist>
+            <waist>Qiqirn Sash</waist>
         </set>
 
         <set name="TP" baseset="Idle">
-            <head>Optical Hat</head>
-            <waist>Tilt Belt</waist>
         </set>
 
         <set name="SummoningSkill" baseset="Idle">
             <head>Evoker's Horn</head>
             <!--<neck>Summoning Torque</neck>-->
             <body>Yinyang Robe</body>
-            <hands>Summoner's Brcr.</hands>
             <ring1>Evoker's Ring</ring1>
         </set>
 
         <set name="BPDelay" baseset="SummoningSkill">
             <head>Austere Hat</head>
             <body>Yinyang Robe</body>
-            <hands>Summoner's Brcr.</hands>
-            <legs>Summoner's Spats</legs>
         </set>
 
         <set name="PerpCost">
@@ -80,58 +72,39 @@
         <set name="Leviathan" baseset="PerpCost"><main>$waterStaff</main></set>
 
         <set name="FastCast">
-            <feet>Rostrum Pumps</feet>
         </set>
 
         <set name="Haste">
         </set>
 
         <set name="Interrupt">
-            <main>Ebony Wand</main>
-            <sub>Genbu's Shield</sub>
+            <main>$earthStaff</main>
         </set>
 
         <set name="Enmity">
-            <ammo>Hedgehog Bomb</ammo>
-            <legs>Errant Slops</legs>
-            <feet>Errant Pigaches</feet>
         </set>
 
         <set name="MND">
-            <main>Ebony Wand</main>
-            <sub>Tortoise Shield</sub>
-            <head>Zenith Crown</head>
-            <neck>Holy Phial</neck>
-            <hands>Devotee's Mitts</hands>
+            <main>Chestnut Wand</main>
             <ring1>Saintly Ring</ring1>
             <ring2>Saintly Ring</ring2>
-            <back>Rainbow Cape</back>
-            <waist>Friar's Rope</waist>
-            <legs>Errant Slops</legs>
-            <feet>Errant Pigaches</feet>
         </set>
 
         <set name="INT">
-            <main>Ebony Wand</main>
-            <sub>Tortoise Shield</sub>
-            <ammo>Phtm. Tathlum</ammo>
-            <body>Shaman's Cloak</body>
+            <main>Chestnut Wand</main>
+            <ammo>Morion Tathlum</ammo>
             <ring1>Eremite's Ring</ring1>
             <ring2>Eremite's Ring</ring2>
-            <back>Rainbow Cape</back>
-            <legs>Errant Slops</legs>
-            <feet>Rostrum Pumps</feet>
         </set>
 
         <set name="Cure" baseset="MND">
             <main>Light Staff</main>
-            <sub>Raptor Strap +1</sub>
-            <ammo>Hedgehog Bomb</ammo>
+            <sub>Raptor Strap</sub>
         </set>
 
         <set name="Enfeeble">
-            <neck>Enfeebling Torque</neck>
-            <body>Shaman's Cloak</body>
+            <neck>Spider Torque</neck>
+            <!-- <body>Shaman's Cloak</body> -->
         </set>
 
     </sets>
@@ -199,7 +172,7 @@
         <if advanced="(%at_type=monster)&(%ad_element!=unknown)">
             <equip>
                 <main>$%ad_elementStaff</main>
-                <sub>Raptor Strap +1</sub>
+                <sub>Raptor Strap</sub>
             </equip>
         </if>
     </midmagic>
@@ -219,23 +192,6 @@
     </weaponskill>
 
     <idlegear>
-        <!-- Lock manually-equipped activatable items -->
-        <if eq_main="Warp Cudgel|*Signet Staff">
-            <equip lock="true">
-                <main>%eq_main</main>
-            </equip>
-        </if>
-        <if eq_ring1="Empress Band|Return Ring|Homing Ring|Tavnazian Ring|Olduum Ring|Teleport Ring*|Dem Ring|Holla Ring|Mea Ring|Altep Ring|Yhoat Ring|Vahzl Ring">
-            <equip lock="true">
-                <ring1>%eq_rring</ring1>
-            </equip>
-        </if>
-        <if eq_ring2="Empress Band|Return Ring|Homing Ring|Tavnazian Ring|Olduum Ring|Teleport Ring*|Dem Ring|Holla Ring|Mea Ring|Altep Ring|Yhoat Ring|Vahzl Ring">
-            <equip lock="true">
-                <ring2>%eq_rring</ring2>
-            </equip>
-        </if>
-
         <if p_status="resting">
             <equip set="Resting" />
         </if>
@@ -244,34 +200,6 @@
         </elseif>
         <else>
             <equip set="Idle" />
-
-            <!-- Town gear -->
-            <if advanced="(%e_area!=Dynamis*)&(e_area=*Bastok*|Metalworks|*d'Or*|*Windurst*|Heaven's Tower|*Jeuno|Ru'Lude Gardens|Selbina|Mhaura|Norg|Tavnazian Safehold|Al Zahbi|Aht Urgan Whitegate|Nashmau">
-                <!-- Vanity set -->
-                <equip set="Town" />
-                <equip>
-                    <head>Gala Corsage</head>
-                </equip>
-                <!-- Aketons -->
-                <if e_area="*Bastok*|Metalworks">
-                    <equip>
-                        <body>Republic Aketon</body>
-                    </equip>
-                </if>
-                <!--
-                <elseif e_area="*Windurst*|Heaven's Tower">
-                    <equip>
-                        <body>Federation Aketon</body>
-                    </equip>
-                </elseif>
-                <elseif e_area="*d'Or*">
-                    <equip>
-                        <body>Kingdom Aketon</body>
-                    </equip>
-                </elseif>
-                -->
-            </if>
-
         </else>        
 
         <!-- SMN perpetuation -->
@@ -288,6 +216,23 @@
             <elseif pet_name="Titan|EarthSpirit"><equip set="Titan" /></elseif>
             <elseif pet_name="Ramuh|ThunderSpirit"><equip set="Ramuh" /></elseif>
             <elseif pet_name="Leviathan|WaterSpirit"><equip set="Leviathan" /></elseif>
+        </if>
+
+        <!-- Lock manual equips -->
+        <if eq_main="*Signet Staff">
+            <equip lock="true">
+                <main>%eq_main</main>
+            </equip>
+        </if>
+        <if eq_ring1="Empress Band|Return Ring|Homing Ring|Tavnazian Ring|Olduum Ring|Dem Ring|Holla Ring|Mea Ring|Altep Ring|Yhoat Ring|Vahzl Ring">
+            <equip lock="true">
+                <ring1>%eq_rring</ring1>
+            </equip>
+        </if>
+        <if eq_ring2="Empress Band|Return Ring|Homing Ring|Tavnazian Ring|Olduum Ring|Dem Ring|Holla Ring|Mea Ring|Altep Ring|Yhoat Ring|Vahzl Ring">
+            <equip lock="true">
+                <ring2>%eq_rring</ring2>
+            </equip>
         </if>
 
         <if buffactive="Sleep">

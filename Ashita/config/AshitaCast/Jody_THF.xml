@@ -222,6 +222,23 @@
     </midranged>
 
     <idlegear>
+        <!-- Lock manually-equipped activatable items -->
+        <if eq_main="Warp Cudgel|*Signet Staff">
+            <equip lock="true">
+                <main>%eq_main</main>
+            </equip>
+        </if>
+        <if eq_ring1="Empress Band|Return Ring|Homing Ring|Tavnazian Ring|Olduum Ring|Teleport Ring*|Dem Ring|Holla Ring|Mea Ring|Altep Ring|Yhoat Ring|Vahzl Ring">
+            <equip lock="true">
+                <ring1>%eq_rring</ring1>
+            </equip>
+        </if>
+        <if eq_ring2="Empress Band|Return Ring|Homing Ring|Tavnazian Ring|Olduum Ring|Teleport Ring*|Dem Ring|Holla Ring|Mea Ring|Altep Ring|Yhoat Ring|Vahzl Ring">
+            <equip lock="true">
+                <ring2>%eq_rring</ring2>
+            </equip>
+        </if>
+
         <if p_status="resting">
             <equip set="Resting" />
         </if>
@@ -248,18 +265,14 @@
         <else>
             <equip set="Idle" />
         </else>
+
+        <!-- Keep DEX/WS set on if SA is up -->
         <if buffactive="Sneak Attack">
-        	<equip set="WS" />
+            <equip set="WS" />
         </if>
 
-<!--         <if e_area="Bastok*">
-            <equip>
-                <head>Gala Corsage</head>
-                <body>Republic Aketon</body>
-            </equip>
-        </if> -->
         <if buffactive="Sleep">
-        	<equip set="Idle" />
+            <equip set="Idle" />
             <equip><neck>Opo-opo Necklace</neck></equip>
         </if>
     </idlegear>

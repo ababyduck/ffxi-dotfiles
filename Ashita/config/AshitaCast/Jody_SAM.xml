@@ -142,7 +142,7 @@
 
     	<var name="acc">0</var>
     	<var name="pulling">0</var>
-    	<var name="kiting">0</var>
+    	<var name="kiting">1</var>
     	<var name="autows">0</var>
 
     </variables>
@@ -246,13 +246,30 @@
     </midranged>
 
     <idlegear>
+        <!-- Lock manually-equipped activatable items -->
+        <if eq_main="Warp Cudgel|*Signet Staff">
+            <equip lock="true">
+                <main>%eq_main</main>
+            </equip>
+        </if>
+        <if eq_ring1="Empress Band|Return Ring|Homing Ring|Tavnazian Ring|Olduum Ring|Teleport Ring*|Dem Ring|Holla Ring|Mea Ring|Altep Ring|Yhoat Ring|Vahzl Ring">
+            <equip lock="true">
+                <ring1>%eq_rring</ring1>
+            </equip>
+        </if>
+        <if eq_ring2="Empress Band|Return Ring|Homing Ring|Tavnazian Ring|Olduum Ring|Teleport Ring*|Dem Ring|Holla Ring|Mea Ring|Altep Ring|Yhoat Ring|Vahzl Ring">
+            <equip lock="true">
+                <ring2>%eq_rring</ring2>
+            </equip>
+        </if>
+
         <if p_status="resting">
             <equip set="Resting" />
         </if>
         <elseif p_status="engaged">
 
         	<!-- If auto-WS mode is enabled and target is above 10% HP, do a thing -->
-	    	<if advanced="($autows=1)&(%p_tp>=1000)&(%at_hpp>10)">
+	    	<if advanced="($autows=1)&(%p_tp>=1000)&(%at_hpp>15)">
 	    		<command>/ws "Tachi: Gekko" &lt;t&gt;</command>
                 <command>/ws "Penta Thrust" &lt;t&gt;</command>
 	    	</if>
@@ -273,12 +290,6 @@
         <else>
             <equip set="Idle" />
         </else>
-
-        <!-- Town gear
-        <if e_area="Ru'Lude*|*Jeuno|Port*|*d'Oria|Bastok*|Metalworks|Windurst*|Heaven's*|Norg|Rabao|Tavnazia*|*Zahbi|*Whitegate|Nashmau">
-            <equip set="Town" />
-        </if>
-        -->
 
         <if buffactive="Sleep">
             <equip set="Idle" />
