@@ -340,7 +340,10 @@
             <equip set="Idle" />
 
             <!-- Town gear -->
-            <if advanced="(%e_area!=Dynamis*)&(e_area=*Bastok*|Metalworks|*d'Or*|*Windurst*|Heaven's Tower|*Jeuno|Ru'Lude Gardens|Selbina|Mhaura|Norg|Tavnazian Safehold|Al Zahbi|Aht Urgan Whitegate|Nashmau)">
+            <if e_area="*Bastok*|Metalworks|*d'Or*|*Windurst*|Heaven's Tower|*Jeuno|Ru'Lude Gardens|Selbina|Mhaura|Norg|Tavnazian Safehold|Al Zahbi|Aht Urgan Whitegate|Nashmau">
+                <if e_area="Dynamis*">
+                    <return />
+                </if>
                 <!-- Vanity set -->
                 <equip set="Town" />
                 <equip>
