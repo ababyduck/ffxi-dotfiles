@@ -1,6 +1,13 @@
+/alias clearall
+
 # Custom Aliases
 /alias add /cookie /item "Ginger Cookie" <me>
 /alias add /iworm /pet "Assault" <bt>
+
+# Follows
+/alias add /fz /follow Zuri
+/alias add /fj /follow Jody
+/alias add /fm /follow Musubi
 
 # Standard Spell/Ability Aliases
 /alias add /bl /ma "Blink" <me>
@@ -74,9 +81,9 @@
 /alias add /raga2 //curaga2
 /alias add /raga3 //curaga3
 /alias add /raga4 //curaga4
-/alias add /reg //regen
-/alias add /reg2 //regen2
-/alias add /reg3 //regen3
+/alias add /re1 //regen
+/alias add /re2 //regen2
+/alias add /re3 //regen3
 /alias add /regen //regen
 /alias add /regen2 //regen2
 /alias add /regen3 //regen3
@@ -108,6 +115,7 @@
 /alias add /stna //stona
 /alias add /pena //stona
 /alias add /vna //viruna
+/alias add /erase //erase
 /alias add /voke //provoke
 #/alias add /sleep //sleep
 /alias add /sleepga //sleepga

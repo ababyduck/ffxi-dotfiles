@@ -1,7 +1,0 @@
-<autojoin>
-    <default>ignore</default> <!--Can be join/decline/ignore.  Ignore does nothing, it doesn't hide the invite.-->
-    <!--You can use any amount of join/decline/ignore tags in any order to add name-specific settings.-->
-    <join>Zuri</join> 
-    <join>Jody</join>   
-    <join>Musubi</join>
-</autojoin>

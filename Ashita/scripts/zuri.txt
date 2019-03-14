@@ -26,8 +26,8 @@
 
 /load GearLock
 /gl self off
-/gl others off
 /gl target on
+/gl others on
 
 /plugin silent
 
@@ -47,6 +47,7 @@
 /addon load recast
 /addon load filterless
 /addon load debuff
+/addon load enternity
 
 /addon load drawdistance
 /drawdistance setworld 6
