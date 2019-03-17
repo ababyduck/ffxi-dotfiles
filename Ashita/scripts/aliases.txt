@@ -3,6 +3,7 @@
 # Custom Aliases
 /alias add /cookie /item "Ginger Cookie" <me>
 /alias add /iworm /pet "Assault" <bt>
+/alias add /hm /ma "Haste" <me>
 
 # Follows
 /alias add /fz /follow Zuri
@@ -46,6 +47,7 @@
 /alias add /vahzl /ma "Teleport-Vahzl" <me>
 /alias add /warp /ma "Warp" <me>
 /alias add /esc /ma "Escape" <me>
+/alias add /escape /ma "Escape" <me>
 /alias add /maz /ma "Chocobo Mazurka" <me>
 /alias add /rmaz /ma "Raptor Mazurka" <me>
 /alias add /carbuncle /ma "Carbuncle" <me>
@@ -117,11 +119,18 @@
 /alias add /vna //viruna
 /alias add /erase //erase
 /alias add /voke //provoke
-#/alias add /sleep //sleep
+/alias add /sl //sleep
+/alias add /slga //sleepga
 /alias add /sleepga //sleepga
+/alias add /dia //dia
+/alias add /dia2 //dia2
 /alias add /para //paralyze
 /alias add /slow //slow
 /alias add /blind //blind
 /alias add /silence //silence
+/alias add /dispel //dispel
 /alias add /sil //silence
 /alias add /finale //magicfinale
+/alias add /elegy //carnageelegy
+/alias add /lull //foelullaby
+/alias add /hlull //hordelullaby
