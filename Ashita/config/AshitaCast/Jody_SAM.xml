@@ -27,17 +27,17 @@
     <sets>
         <set name="Idle">
             <head>Optical Hat</head>
-            <body>Scp. Harness +1</body>
-            <hands>Saotome Kote</hands>
-            <legs>Byakko's Haidate</legs>
-            <feet>Myochin Sune-Ate</feet>
             <neck>Evasion Torque</neck>
-            <waist>Scouter's Rope</waist>
             <ear1>Cassie Earring</ear1>
             <ear2>Intruder Earring</ear2>
+            <body>Scp. Harness +1</body>
+            <hands>Saotome Kote</hands>
             <ring1>Phalanx Ring</ring1>
             <ring2>Phalanx Ring</ring2>
             <back>Bat Cape</back>
+            <waist>Scouter's Rope</waist>
+            <legs>Byakko's Haidate</legs>
+            <feet>Myochin Sune-Ate</feet>
         </set>
 
         <set name="Resting" baseset="Idle">
@@ -137,13 +137,12 @@
     </sets>
 
     <variables>
-    	<!-- Set this to 1 if you normally play with /gearlock self on -->
-    	<var name="gearlockme">0</var>
+    	<!-- Set this to 1 if you prefer /gearlock self on -->
+    	<var name="gearlockme">1</var>
 
     	<var name="acc">0</var>
     	<var name="pulling">0</var>
     	<var name="kiting">1</var>
-    	<var name="autows">0</var>
 
     </variables>
 
@@ -193,17 +192,6 @@
     				<command>/gl self off</command>
     			</if>
     		</else>
-    	</cmd>
-
-    	<cmd input="/autows">
-    		<if advanced="$autows=0">
-	    		<setvar name="autows" value="1" />
-	    		<addtochat color="50">Auto-WS mode ENABLED</addtochat>
-	    	</if>
-	    	<else>
-	    		<setvar name="autows" value="0" />
-	    		<addtochat color="50">Auto-WS mode DISABLED</addtochat>
-	    	</else>
     	</cmd>
 
     </inputcommands>
@@ -267,12 +255,6 @@
             <equip set="Resting" />
         </if>
         <elseif p_status="engaged">
-
-        	<!-- If auto-WS mode is enabled and target is above 10% HP, do a thing -->
-	    	<if advanced="($autows=1)&(%p_tp>=1000)&(%at_hpp>15)">
-	    		<command>/ws "Tachi: Gekko" &lt;t&gt;</command>
-                <command>/ws "Penta Thrust" &lt;t&gt;</command>
-	    	</if>
 
 	    	<if advanced="$acc=1">
 	    		<equip set="TP_Acc" />

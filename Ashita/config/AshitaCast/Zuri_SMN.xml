@@ -18,21 +18,21 @@
     
     <sets>
         <set name="Idle">
-            <main>Earth Staff</main>
+            <main>$earthStaff</main>
             <sub>Raptor Strap +1</sub>
             <ammo>Phtm. Tathlum</ammo>
             <head>Austere Hat</head>
-            <body>Yinyang Robe</body>
-            <hands>Summoner's Brcr.</hands>
-            <legs>Evoker's Spats</legs>
-            <feet>Rostrum Pumps</feet>
             <neck>Holy Phial</neck>
-            <waist>Mohbwa Sash +1</waist>
             <ear1>Melody Earring +1</ear1>
             <ear2>Melody Earring +1</ear2>
+            <body>Yinyang Robe</body>
+            <hands>Summoner's Brcr.</hands>
             <ring1>Evoker's Ring</ring1>
             <ring2>Serket Ring</ring2>
             <back>Blue Cape</back>
+            <waist>Mohbwa Sash +1</waist>
+            <legs>Evoker's Spats</legs>
+            <feet>Rostrum Pumps</feet>
         </set>
 
         <set name="Resting" baseset="Idle">
@@ -138,12 +138,12 @@
 
     <variables>
         <!-- Replace these with HQ/NQ variants depending on what you've got -->
-        <var name="lightStaff">Light Staff</var>
+        <var name="lightStaff">Apollo's Staff</var>
         <var name="darkStaff">Dark Staff</var>
         <var name="fireStaff">Fire Staff</var>
         <var name="iceStaff">Ice Staff</var>
         <var name="windStaff">Wind Staff</var>
-        <var name="earthStaff">Earth Staff</var>
+        <var name="earthStaff">Terra's Staff</var>
         <var name="thunderStaff">Thunder Staff</var>
         <var name="waterStaff">Water Staff</var>
     </variables>

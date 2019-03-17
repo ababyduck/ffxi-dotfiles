@@ -19,14 +19,14 @@
     <sets>
 
         <set name="Idle">
-            <main>Earth Staff</main>
+            <main>$earthStaff</main>
             <sub>Raptor Strap +1</sub>
             <ammo>Hedgehog Bomb</ammo>
+            <head></head>
             <neck>Holy Phial</neck>
-            <body>Royal Cloak</body>
             <ear1>Melody Earring +1</ear1>
             <ear2>Melody Earring +1</ear2>
-            <body>Noble's Tunic</body>
+            <body>Royal Cloak</body>
             <hands>Savage Gauntlets</hands>
             <ring1>Serket Ring</ring1>
             <ring2>Vilma's Ring</ring2>
@@ -143,12 +143,12 @@
         <var name="melee">0</var>
 
         <!-- Replace these with HQ/NQ variants depending on what you've got -->
-        <var name="lightStaff">Light Staff</var>
+        <var name="lightStaff">Apollo's Staff</var>
         <var name="darkStaff">Dark Staff</var>
         <var name="fireStaff">Fire Staff</var>
         <var name="iceStaff">Ice Staff</var>
         <var name="windStaff">Wind Staff</var>
-        <var name="earthStaff">Earth Staff</var>
+        <var name="earthStaff">Terra's Staff</var>
         <var name="thunderStaff">Thunder Staff</var>
         <var name="waterStaff">Water Staff</var>
     </variables>

@@ -131,18 +131,25 @@
         <set name="Barspell" baseset="MND">
         </set>
 
+        <set name="Choco">
+            <body>Choc. Jack Coat</body>
+            <hands>Chocobo Gloves</hands>
+            <legs>Chocobo Hose</legs>
+            <feet>Chocobo Boots</feet>
+        </set>
+
     </sets>
 
     <variables>
         <var name="melee">0</var>
 
         <!-- Replace these with HQ/NQ variants depending on what you've got -->
-        <var name="lightStaff">Light Staff</var>
+        <var name="lightStaff">Apollo's Staff</var>
         <var name="darkStaff">Dark Staff</var>
         <var name="fireStaff">Fire Staff</var>
         <var name="iceStaff">Ice Staff</var>
         <var name="windStaff">Wind Staff</var>
-        <var name="earthStaff">Earth Staff</var>
+        <var name="earthStaff">Terra's Staff</var>
         <var name="thunderStaff">Thunder Staff</var>
         <var name="waterStaff">Water Staff</var>
     </variables>
