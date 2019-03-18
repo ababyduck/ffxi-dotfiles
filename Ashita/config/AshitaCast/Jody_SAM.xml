@@ -259,14 +259,14 @@
 	    	<if advanced="$acc=1">
 	    		<equip set="TP_Acc" />
 	    	</if>
-	    	<else>
-	    		<equip set="TP" />
-	    	</else>
 
         	<!-- If kiting mode is enabled, swap dusk pieces for movement speed when engaged and moving -->
         	<if advanced="($kiting=1)&(%p_ismoving=true)">
         		<equip set="TP_Moving" />
         	</if>
+            <else>
+                <equip set="TP" />
+            </else>
 
         </elseif>
         <else>
