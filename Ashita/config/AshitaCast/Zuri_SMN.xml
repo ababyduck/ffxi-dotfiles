@@ -227,12 +227,12 @@
         </if>
         <if eq_ring1="Empress Band|Return Ring|Homing Ring|Tavnazian Ring|Olduum Ring|Teleport Ring*|Dem Ring|Holla Ring|Mea Ring|Altep Ring|Yhoat Ring|Vahzl Ring">
             <equip lock="true">
-                <ring1>%eq_rring</ring1>
+                <ring1>%eq_ring1</ring1>
             </equip>
         </if>
         <if eq_ring2="Empress Band|Return Ring|Homing Ring|Tavnazian Ring|Olduum Ring|Teleport Ring*|Dem Ring|Holla Ring|Mea Ring|Altep Ring|Yhoat Ring|Vahzl Ring">
             <equip lock="true">
-                <ring2>%eq_rring</ring2>
+                <ring2>%eq_ring2</ring2>
             </equip>
         </if>
 
@@ -293,7 +293,7 @@
             <elseif pet_name="Leviathan|WaterSpirit"><equip set="Leviathan" /></elseif>
         </if>
 
-        <if buffactive="Sleep">
+        <if buffactive="2|19">
             <equip set="Idle" />
             <equip><neck>Opo-opo Necklace</neck></equip>
         </if>

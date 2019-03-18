@@ -24,8 +24,8 @@
     <sets>
 
         <set name="Idle">
-            <main>Joyeuse</main>
-            <sub>Genbu's Shield</sub>
+            <main>$earthStaff</main>
+            <sub>Raptor Strap +1</sub>
             <range>San d'Orian Horn</range>
             <head></head>
             <neck>Bird Whistle</neck>
@@ -167,6 +167,7 @@
 
     <variables>
         <var name="melee">0</var>
+        <var name="string">0</var>
 
         <!-- Replace these with HQ/NQ variants depending on what you've got -->
         <var name="lightStaff">Apollo's Staff</var>
@@ -203,6 +204,17 @@
                 <command>/ac enable sub</command>
                 <command>/ac enable range</command>
                 <command>/ac enable ammo</command>
+            </else>
+        </cmd>
+
+        <cmd input="/string">
+            <if advanced="$string=0">
+                <setvar name="string" value="1" />
+                <addtochat color="50">String mode ENABLED</addtochat>
+            </if>
+            <else>
+                <setvar name="string" value="0" />
+                <addtochat color="50">String mode DISABLED</addtochat>
             </else>
         </cmd>
 
@@ -269,7 +281,7 @@
             <elseif ad_name="*Etude">
                 <equip set="Etude" />
             </elseif>
-            <elseif ad_name="*Mazurka|*Hymnus">
+            <elseif advanced="(ad_name=*Mazurka|*Hymnus)|($string=1)">
                 <equip>
                     <range>Maple Harp</range>
                 </equip>
@@ -322,12 +334,12 @@
         </if>
         <if eq_ring1="Empress Band|Return Ring|Homing Ring|Tavnazian Ring|Olduum Ring|Teleport Ring*|Dem Ring|Holla Ring|Mea Ring|Altep Ring|Yhoat Ring|Vahzl Ring">
             <equip lock="true">
-                <ring1>%eq_rring</ring1>
+                <ring1>%eq_ring1</ring1>
             </equip>
         </if>
         <if eq_ring2="Empress Band|Return Ring|Homing Ring|Tavnazian Ring|Olduum Ring|Teleport Ring*|Dem Ring|Holla Ring|Mea Ring|Altep Ring|Yhoat Ring|Vahzl Ring">
             <equip lock="true">
-                <ring2>%eq_rring</ring2>
+                <ring2>%eq_ring2</ring2>
             </equip>
         </if>
 
@@ -346,13 +358,11 @@
                     <return />
                 </if>
                 <!-- Vanity set -->
-                <equip set="Town" />
-                <equip>
-                    <head>Gala Corsage</head>
-                </equip>
+                <!-- <equip set="Town" /> -->
                 <!-- Aketons -->
                 <if e_area="*Bastok*|Metalworks">
                     <equip>
+                        <head>Gala Corsage</head>
                         <body>Republic Aketon</body>
                     </equip>
                 </if>
@@ -372,7 +382,7 @@
 
         </else>
 
-        <if buffactive="Sleep">
+        <if buffactive="2|19">
             <equip set="Idle" />
             <equip><neck>Opo-opo Necklace</neck></equip>
         </if>
