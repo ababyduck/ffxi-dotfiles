@@ -256,14 +256,13 @@
         </if>
         <elseif p_status="engaged">
 
-	    	<if advanced="$acc=1">
-	    		<equip set="TP_Acc" />
-	    	</if>
-
         	<!-- If kiting mode is enabled, swap dusk pieces for movement speed when engaged and moving -->
         	<if advanced="($kiting=1)&(%p_ismoving=true)">
         		<equip set="TP_Moving" />
         	</if>
+            <elseif advanced="$acc=1">
+                <equip set="TP_Acc" />
+            </elseif>
             <else>
                 <equip set="TP" />
             </else>

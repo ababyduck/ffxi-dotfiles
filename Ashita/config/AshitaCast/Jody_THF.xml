@@ -236,6 +236,9 @@
         	<if advanced="($kiting=1)&(%p_ismoving=true)">
         		<equip set="TP_Moving" />
         	</if>
+            <elseif advanced="$acc=1">
+                <equip set="TP_Acc" />
+            </elseif>
             <else>
                 <equip set="TP" />
             </else>
