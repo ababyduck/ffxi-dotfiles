@@ -63,6 +63,10 @@
             <legs>Summoner's Spats</legs>
         </set>
 
+        <set name="BPAcc" baseset="BPDelay">
+            <legs>Evoker's Spats</legs>
+        </set>
+
         <set name="PerpCost">
             <ring1>Evoker's Ring</ring1>
         </set>
@@ -205,14 +209,20 @@
     </midmagic>
 
     <petskill>
-        <if ad_type="bloodpact*">
+        <if ad_type="bloodpactward">
             <equip set="BPDelay" />
         </if>
+        <elseif ad_type="bloodpactrage">
+            <equip set="BPAcc" />
+        </elseif>
     </petskill>
     <jobability>
-        <if ad_type="bloodpact*">
+        <if ad_type="bloodpactward">
             <equip set="BPDelay" />
         </if>
+        <elseif ad_type="bloodpactrage">
+            <equip set="BPAcc" />
+        </elseif>
     </jobability>
 
     <weaponskill>
