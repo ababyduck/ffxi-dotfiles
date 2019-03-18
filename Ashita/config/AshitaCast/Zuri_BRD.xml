@@ -36,7 +36,7 @@
             <ring1>Angel's Ring</ring1>
             <ring2>Angel's Ring</ring2>
             <back>Rainbow Cape</back>
-            <waist>Corsette +1</waist>
+            <waist>Jungle Stone</waist>
             <legs>Choral Cannions</legs>
             <feet>Rostrum Pumps</feet>
         </set>
@@ -109,11 +109,12 @@
             <sub>Tortoise Shield</sub>
             <head>Zenith Crown</head>
             <neck>Holy Phial</neck>
+            <!-- <body>Errant Houppelande</body> -->
             <hands>Devotee's Mitts</hands>
             <ring1>Saintly Ring</ring1>
             <ring2>Saintly Ring</ring2>
             <back>Rainbow Cape</back>
-            <waist>Friar's Rope</waist>
+            <waist>Jungle Stone</waist>
             <legs>Errant Slops</legs>
             <feet>Errant Pigaches</feet>
         </set>
@@ -126,6 +127,7 @@
             <ring1>Eremite's Ring</ring1>
             <ring2>Eremite's Ring</ring2>
             <back>Rainbow Cape</back>
+            <waist>Jungle Stone</waist>
             <legs>Errant Slops</legs>
             <feet>Rostrum Pumps</feet>
         </set>
@@ -134,7 +136,6 @@
             <main>$lightStaff</main>
             <sub>Raptor Strap +1</sub>
             <ammo>Hedgehog Bomb</ammo>
-            <body>Noble's Tunic</body>
             <hands>Healer's Mitts</hands>
         </set>
 
