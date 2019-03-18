@@ -42,7 +42,7 @@
         	<neck>Peacock Charm</neck>
         	<ear1>Suppanomimi</ear1>
         	<ear2>Optical Earring</ear2> <!-- Pixie -->
-        	<body>Scp. Harness +1</body> <!-- Raparee Harness -->
+        	<body>Raparee Harness</body>
             <hands>Dusk Gloves</hands>
             <ring1>Sniper's Ring</ring1> <!-- +1s -->
             <ring2>Sniper's Ring</ring2>
@@ -54,6 +54,7 @@
 
         <set name="TP_Acc" baseset="TP">
         	<head>Optical Hat</head>
+            <body>Scp. Harness +1</body>
         	<hands>War Gloves</hands>
         	<waist>Life Belt</waist>
         </set>
