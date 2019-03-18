@@ -114,6 +114,7 @@
 /alias add /cna //cursna
 /alias add /sna //silena
 /alias add /sina //silena
+/alias add /silena //silena
 /alias add /stna //stona
 /alias add /pena //stona
 /alias add /vna //viruna
