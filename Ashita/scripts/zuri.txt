@@ -48,6 +48,7 @@
 /addon load filterless
 /addon load debuff
 /addon load enternity
+/addon load autojoin
 
 /addon load drawdistance
 /drawdistance setworld 6
@@ -95,4 +96,6 @@
 /bind silent
 
 /exec aliases
+
+/wait 5
 /cm p
