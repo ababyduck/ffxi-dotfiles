@@ -96,6 +96,3 @@
 /bind silent
 
 /exec aliases
-
-/wait 5
-/cm p
