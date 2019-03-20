@@ -37,7 +37,6 @@
         </set>
 
         <set name="TP" baseset="Idle">
-        	<!-- <ammo>Tiphia Sting</ammo> -->
         	<head>Patroclus's Helm</head><!-- Walmart Turban -->
         	<neck>Peacock Charm</neck>
         	<ear1>Suppanomimi</ear1>
@@ -53,6 +52,7 @@
         </set>
 
         <set name="TP_Acc" baseset="TP">
+            <ammo>Tiphia Sting</ammo>
         	<head>Optical Hat</head>
             <body>Scp. Harness +1</body>
         	<hands>War Gloves</hands>
@@ -93,7 +93,7 @@
         </set>
 
         <set name="WS_Multihit" baseset="WS">
-        	<!-- <ammo>Tiphia Sting</ammo> -->
+        	<ammo>Tiphia Sting</ammo>
         	<head>Optical Hat</head> <!-- Hecatomb -->
         	<neck>Peacock Charm</neck>
             <ring1>Sniper's Ring</ring1> <!-- +1s -->

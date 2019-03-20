@@ -53,23 +53,25 @@
         </set>
 
         <set name="TP">
-            <!-- <ammo>Tiphia Sting</ammo> -->
+            <ammo>Tiphia Sting</ammo>
             <head>Ace's Helm</head>
+            <neck>Peacock Charm</neck>
+            <ear1>Fowling Earring</ear1>
+            <ear2>Spike Earring</ear2>
             <body>Haubergeon</body>
             <hands>Dusk Gloves</hands>
-            <legs>Byakko's Haidate</legs>
-            <feet>Fuma Kyahan</feet>
-            <neck>Peacock Charm</neck>
-            <waist>Speed Belt</waist>
-            <ear1>Cassie Earring</ear1>
-            <ear2>Spike Earring</ear2>
             <ring1>Sniper's Ring</ring1>
             <ring2>Sniper's Ring</ring2>
             <back>Amemet Mantle +1</back>
+            <waist>Speed Belt</waist>
+            <legs>Byakko's Haidate</legs>
+            <feet>Fuma Kyahan</feet>
         </set>
 
         <set name="TP_Acc" baseset="TP">
         	<head>Optical Hat</head>
+            <ear1>Fowling Earring</ear1>
+            <ear2>Optical Earring</ear2>
         	<hands>War Gloves</hands>
         	<waist>Life Belt</waist>
         </set>
@@ -96,8 +98,8 @@
         	<ammo>Bomb Core</ammo>
         	<head>Wyvern Helm</head>
         	<neck>Spike Necklace</neck>
-        	<ear1>Cassie Earring</ear1>
-        	<ear2>Spike Earring</ear2>
+        	<ear1>Fowling Earring</ear1>
+        	<ear2>Cassie Earring</ear2>
         	<body>Haubergeon</body>
         	<hands>Pallas's Bracelets</hands>
         	<ring1>Garnet Ring</ring1>
@@ -109,10 +111,11 @@
         </set>
 
         <set name="WS_Multihit" baseset="WS">
-        	<!-- <ammo>Tiphia Sting</ammo> -->
+        	<ammo>Tiphia Sting</ammo>
         	<head>Optical Hat</head>
         	<neck>Peacock Charm</neck>
-            <ear1>Intruder Earring</ear1>
+            <ear1>Fowling Earring</ear1>
+            <ear2>Intruder Earring</ear2>
             <ring1>Sniper's Ring</ring1>
             <ring2>Sniper's Ring</ring2>
             <waist>Life Belt</waist>
