@@ -27,7 +27,7 @@
             <legs>Evoker's Spats</legs>
             <feet>Wonder Clomps</feet>
             <neck>Justice Badge</neck>
-            <back>Mist Silk Cape</back>
+            <back>Rainbow Cape</back>
             <waist>Qiqirn Sash</waist>
             <ring1>Evoker's Ring</ring1>
             <ring2>Vilma's Ring</ring2>
@@ -93,6 +93,7 @@
             <main>Chestnut Wand</main>
             <ring1>Saintly Ring</ring1>
             <ring2>Saintly Ring</ring2>
+            <back>Rainbow Cape</back>
         </set>
 
         <set name="INT">
@@ -100,6 +101,7 @@
             <ammo>Morion Tathlum</ammo>
             <ring1>Eremite's Ring</ring1>
             <ring2>Eremite's Ring</ring2>
+            <back>Rainbow Cape</back>
         </set>
 
         <set name="Cure" baseset="MND">
