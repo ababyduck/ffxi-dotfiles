@@ -22,15 +22,17 @@
             <sub>Raptor Strap</sub>
             <ammo>Morion Tathlum</ammo>
             <head>Austere Hat</head>
+            <neck>Justice Badge</neck>
+            <ear1>Morion Earring</ear1>
+            <ear2>Morion Earring</ear2>
             <body>Yinyang Robe</body>
             <hands>Carbuncle Mitts</hands>
-            <legs>Evoker's Spats</legs>
-            <feet>Wonder Clomps</feet>
-            <neck>Justice Badge</neck>
-            <back>Rainbow Cape</back>
-            <waist>Qiqirn Sash</waist>
             <ring1>Evoker's Ring</ring1>
             <ring2>Vilma's Ring</ring2>
+            <back>Rainbow Cape</back>
+            <waist>Qiqirn Sash</waist>
+            <legs>Evoker's Spats</legs>
+            <feet>Wonder Clomps</feet>
         </set>
 
         <set name="Resting" baseset="Idle">
@@ -99,6 +101,8 @@
         <set name="INT">
             <main>Chestnut Wand</main>
             <ammo>Morion Tathlum</ammo>
+            <ear1>Morion Earring</ear1>
+            <ear2>Morion Earring</ear2>
             <ring1>Eremite's Ring</ring1>
             <ring2>Eremite's Ring</ring2>
             <back>Rainbow Cape</back>

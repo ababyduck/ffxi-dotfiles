@@ -24,8 +24,8 @@
             <ammo>Hedgehog Bomb</ammo>
             <head>Zenith Crown</head>
             <neck>Holy Phial</neck>
-            <ear1>Melody Earring +1</ear1>
-            <ear2>Melody Earring +1</ear2>
+            <ear1>Morion Earring</ear1>
+            <ear2>Morion Earring</ear2>
             <body>Noble's Tunic</body>
             <hands>Savage Gauntlets</hands>
             <ring1>Serket Ring</ring1>
@@ -101,6 +101,8 @@
             <main>Ebony Wand</main>
             <sub>Tortoise Shield</sub>
             <ammo>Phtm. Tathlum</ammo>
+            <ear1>Morion Earring</ear1>
+            <ear2>Morion Earring</ear2>
             <body>Shaman's Cloak</body>
             <ring1>Eremite's Ring</ring1>
             <ring2>Eremite's Ring</ring2>
