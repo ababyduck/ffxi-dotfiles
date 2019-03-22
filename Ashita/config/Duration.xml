@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <settings>
-    <setting name="ypos">-480.000000</setting>
-    <setting name="xpos">351.000000</setting>
+    <setting name="ypos">-481.000000</setting>
+    <setting name="xpos">385.000000</setting>
     <setting name="SelfBuffs">1</setting>
     <setting name="MaxBuffs">12</setting>
 </settings>

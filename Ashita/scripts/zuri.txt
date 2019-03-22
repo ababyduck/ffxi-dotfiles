@@ -55,8 +55,7 @@
 /drawdistance setmob 6
 
 /addon load renamer
-/renamer load eramobs
-#/renamer load promyvions
+/renamer load eden
 
 /addon silent
 
