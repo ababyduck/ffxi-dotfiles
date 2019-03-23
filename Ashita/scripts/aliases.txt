@@ -12,6 +12,7 @@
 
 # Standard Spell/Ability Aliases
 /alias add /bl /ma "Blink" <me>
+/alias add /blink /ma "Blink" <me>
 /alias add /ss /ma "Stoneskin" <me>
 /alias add /av /ma "Aquaveil" <me>
 /alias add /ph /ma "Phalanx" <me>
@@ -28,11 +29,11 @@
 /alias add /prora3 /ma "Protectra III" <me>
 /alias add /prora4 /ma "Protectra IV" <me>
 /alias add /prora5 /ma "Protectra V" <me>
-/alias add /sra /ma "Shellra" <me>
-/alias add /sra2 /ma "Shellra II" <me>
-/alias add /sra3 /ma "Shellra III" <me>
-/alias add /sra4 /ma "Shellra IV" <me>
-/alias add /sra5 /ma "Shellra V" <me>
+/alias add /shra /ma "Shellra" <me>
+/alias add /shra2 /ma "Shellra II" <me>
+/alias add /shra3 /ma "Shellra III" <me>
+/alias add /shra4 /ma "Shellra IV" <me>
+/alias add /shra5 /ma "Shellra V" <me>
 /alias add /barf /ma "Barfira" <me>
 /alias add /barb /ma "Barblizzara" <me>
 /alias add /bara /ma "Baraera" <me>
@@ -102,7 +103,7 @@
 /alias add /pro3 //protect3
 /alias add /pro4 //protect4
 /alias add /pro5 //protect5
-/alias add /sh //shell
+/alias add /sh1 //shell
 /alias add /sh2 //shell2
 /alias add /sh3 //shell3
 /alias add /sh4 //shell4
@@ -131,6 +132,7 @@
 /alias add /silence //silence
 /alias add /dispel //dispel
 /alias add /sil //silence
+/alias add /grav //gravity
 /alias add /finale //magicfinale
 /alias add /elegy //carnageelegy
 /alias add /lull //foelullaby
