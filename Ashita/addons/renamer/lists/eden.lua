@@ -1134,4 +1134,9 @@ ObjectList = {
         {17649851, "Goblin Alchemist"},
         {17649856, "Goblin Alchemist"}
     },
+    [159] = 
+    -- Temple of Uggalepih
+    {
+        {17428500, "Temple Opo-opo"},
+    },
 }
