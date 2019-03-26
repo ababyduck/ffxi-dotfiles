@@ -19,7 +19,7 @@
   <setting name="menu_y">-1</setting>
   <setting name="boot_file">.\\ffxi-bootmod\pol.exe</setting>
   <setting name="boot_command">--server play.edenxi.com --hairpin</setting>
-  <setting name="startup_script">zuri</setting>
+  <setting name="startup_script">boot_eden</setting>
   <setting name="d3d_presentparams_buffercount">1</setting>
   <setting name="d3d_presentparams_swapeffect">1</setting>
   <setting name="game_mipmapping">3</setting>

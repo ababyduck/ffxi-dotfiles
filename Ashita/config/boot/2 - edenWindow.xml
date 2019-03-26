@@ -7,13 +7,13 @@
   <setting name="windowed">True</setting>
   <setting name="boot_file">.\\ffxi-bootmod\pol.exe</setting>
   <setting name="boot_command">--server play.edenxi.com --hairpin</setting>
-  <setting name="startup_script">zuri</setting>
+  <setting name="startup_script">boot_eden</setting>
   <setting name="test_server">False</setting>
   <setting name="auto_close">False</setting>
   <setting name="show_border">True</setting>
   <setting name="unhook_mouse">True</setting>
   <setting name="startpos_x">1974</setting>
-  <setting name="startpos_y">92</setting>
+  <setting name="startpos_y">75</setting>
   <setting name="background_x">-1</setting>
   <setting name="background_y">-1</setting>
   <setting name="menu_x">-1</setting>
@@ -29,7 +29,7 @@
   <setting name="game_texturecompression">2</setting>
   <setting name="game_mapcompression">1</setting>
   <setting name="game_fontcompression">1</setting>
-  <setting name="game_soundenabled">-1</setting>
+  <setting name="game_soundenabled">0</setting>
   <setting name="game_soundalwayson">-1</setting>
   <setting name="game_showopeningmovie">-1</setting>
   <setting name="game_simplecharcreation">-1</setting>

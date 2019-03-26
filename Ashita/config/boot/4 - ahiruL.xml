@@ -7,7 +7,7 @@
   <setting name="windowed">True</setting>
   <setting name="boot_file">.\\ffxi-bootmod\pol.exe</setting>
   <setting name="boot_command">--server 192.168.1.25 --hairpin</setting>
-  <setting name="startup_script">zuri</setting>
+  <setting name="startup_script">boot_private</setting>
   <setting name="test_server">True</setting>
   <setting name="auto_close">False</setting>
   <setting name="show_border">True</setting>

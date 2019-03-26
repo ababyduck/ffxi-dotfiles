@@ -1,9 +1,6 @@
 ##########################################################################
 #
-# Zuri's Ashita Startup Script
-#
-# Comments start with '#'.
-# All commands start with '/'
+# Common startup script for Ashita, to be used as a base config
 #
 ##########################################################################
 
@@ -18,7 +15,6 @@
 /load WindowerInput
 /load Addons
 /load Screenshot
-/load Ashitacast
 /load Shorthand
 /load WatchEXP
 /load Dats
@@ -27,7 +23,6 @@
 /load GearLock
 /gl self off
 /gl target on
-/gl others on
 
 /plugin silent
 
@@ -49,13 +44,12 @@
 /addon load debuff
 /addon load enternity
 /addon load autojoin
+/addon load stfu
+/addon load instantah
 
 /addon load drawdistance
 /drawdistance setworld 6
 /drawdistance setmob 6
-
-/addon load renamer
-/renamer load eden
 
 /addon silent
 
