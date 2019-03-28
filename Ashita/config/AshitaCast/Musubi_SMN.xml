@@ -26,7 +26,7 @@
             <ear1>Morion Earring</ear1>
             <ear2>Morion Earring</ear2>
             <body>Yinyang Robe</body>
-            <hands>Carbuncle Mitts</hands>
+            <hands>Summoner's Brcr.</hands>
             <ring1>Evoker's Ring</ring1>
             <ring2>Vilma's Ring</ring2>
             <back>Rainbow Cape</back>
@@ -50,12 +50,14 @@
             <head>Evoker's Horn</head>
             <!--<neck>Summoning Torque</neck>-->
             <body>Yinyang Robe</body>
+            <hands>Summoner's Brcr.</hands>
             <ring1>Evoker's Ring</ring1>
         </set>
 
         <set name="BPDelay" baseset="SummoningSkill">
             <head>Austere Hat</head>
             <body>Yinyang Robe</body>
+            <hands>Summoner's Brcr.</hands>
         </set>
         
         <set name="BPAcc" baseset="BPDelay">
