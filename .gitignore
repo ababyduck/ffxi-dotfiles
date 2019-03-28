@@ -1,8 +1,9 @@
-assets/
-docs/
-logs/
-resources/
+Windower/
+Ashita/assets/
+Ashita/docs/
+Ashita/logs/
+Ashita/resources/
+Ashita/updates/
 screenshots/
-updates/
 *.dll
 *.exe
