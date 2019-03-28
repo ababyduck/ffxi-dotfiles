@@ -1,12 +1,4 @@
 ##########################################################################
-#
-# Common startup script for Ashita, to be used as a base config
-#
-##########################################################################
-
-/wait 4
-
-##########################################################################
 # Load Common Plugins
 ##########################################################################
 
@@ -16,13 +8,8 @@
 /load Addons
 /load Screenshot
 /load Shorthand
-/load WatchEXP
 /load Dats
 /load Duration
-
-/load GearLock
-/gl self off
-/gl target on
 
 /plugin silent
 
@@ -37,14 +24,11 @@
 /addon load timestamp
 /addon load tparty
 
-#/addon load ime
 /addon load macrofix
 /addon load recast
 /addon load filterless
 /addon load debuff
-/addon load enternity
 /addon load autojoin
-/addon load stfu
 /addon load instantah
 
 /addon load drawdistance
@@ -87,5 +71,9 @@
 /bind !F6 /input /ta <a25>
 
 /bind silent
+
+##########################################################################
+# Load common aliases
+##########################################################################
 
 /exec aliases

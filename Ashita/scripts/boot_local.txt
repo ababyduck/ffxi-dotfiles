@@ -1,14 +1,18 @@
-##########################################################################
-# Execute Common Startup Script
-##########################################################################
-/exec boot_common
+/wait 5
 
 ##########################################################################
-# Any additional configuration for local test server
+# Local Test Server
 ##########################################################################
 
-# Addons that may be prohibited on live servers
+# Addons useful for testing which may be prohibited on live servers
 /addon load allmaps
+/addon load paranormal
 
 # Addons currently in development
-# /addon load tickle
+# /addon load ticklish
+
+##########################################################################
+# Common settings
+##########################################################################
+
+/exec boot_common

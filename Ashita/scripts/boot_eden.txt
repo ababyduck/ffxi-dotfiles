@@ -1,15 +1,24 @@
-##########################################################################
-# Execute Common Startup Script
-##########################################################################
-/exec boot_common
+/wait 5
 
 ##########################################################################
-# Any additional configuration for Eden
+# Eden
 ##########################################################################
 
 # Plugins
 /load Ashitacast
+/load WatchEXP
+/load GearLock
+/gl self off
+/gl target on
 
 # Addons
+/addon load stfu
+/addon load enternity
 /addon load renamer
 /renamer load eden
+
+##########################################################################
+# Common settings
+##########################################################################
+
+/exec boot_common
