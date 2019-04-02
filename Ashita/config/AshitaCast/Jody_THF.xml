@@ -14,9 +14,14 @@
     <init>
         <command>/macro book 2</command>
         <command delay="1000">/macro set 1</command>
+        <command>/ac set defaultWeapons</command>
     </init>
 
     <sets>
+        <set name="defaultWeapons" baseset="Idle">
+            <main>Blau Dolch</main>
+            <sub>Thief's Knife</sub>
+        </set>
 		<set name="Idle">
 			<ammo>Bomb Core</ammo>
 			<head>Optical Hat</head>

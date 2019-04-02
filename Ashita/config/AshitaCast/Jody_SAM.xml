@@ -22,9 +22,14 @@
         <elseif p_subjob="nin">
             <command delay="1000">/macro set 3</command>
         </elseif>
+        <command>/ac set defaultWeapons</command>
     </init>
 
     <sets>
+        <set name="defaultWeapons" baseset="Idle">
+            <main>Hagun</main>
+            <sub>Mythril Grip +1</sub>
+        </set>
         <set name="Idle">
             <head>Optical Hat</head>
             <neck>Evasion Torque</neck>
@@ -78,8 +83,6 @@
 
         <set name="TP_Moving">
         	<hands>Saotome Kote</hands>
-        	<legs>Republic Subligar</legs>
-        	<feet>Fuma Kyahan</feet>
         </set>
 
         <set name="Ranged">
