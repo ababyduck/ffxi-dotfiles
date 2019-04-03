@@ -1,24 +1,24 @@
-/wait 5
+##########################################################################
+# Common settings
+##########################################################################
+
+/wait 4
+/exec boot_common
+/wait 8
 
 ##########################################################################
-# Eden
+# Additional config for Eden live
 ##########################################################################
 
 # Plugins
 /load Ashitacast
 /load WatchEXP
 /load GearLock
-/gl self off
 /gl target on
 
 # Addons
 /addon load stfu
 /addon load enternity
+/addon load findall
 /addon load renamer
 /renamer load eden
-
-##########################################################################
-# Common settings
-##########################################################################
-
-/exec boot_common

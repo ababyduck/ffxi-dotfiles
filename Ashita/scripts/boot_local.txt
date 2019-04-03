@@ -1,18 +1,19 @@
-/wait 5
-
 ##########################################################################
-# Local Test Server
+# Common settings
 ##########################################################################
 
-# Addons useful for testing which may be prohibited on live servers
+/wait 4
+/exec boot_common
+/wait 8
+
+##########################################################################
+# Additional config for local test server
+##########################################################################
+
+# Addons useful for testing
+/addon load dinfo
 /addon load allmaps
 /addon load paranormal
 
 # Addons currently in development
 # /addon load ticklish
-
-##########################################################################
-# Common settings
-##########################################################################
-
-/exec boot_common
