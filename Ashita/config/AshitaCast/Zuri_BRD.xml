@@ -19,6 +19,12 @@
         <else>
             <command delay="1000">/macro set 1</command>
         </else>
+
+        <command delay="3000">/gl blink</command>
+
+        <if p_subjob="WHM|BLM|RDM|SMN">
+            <setvar name="mageSub" value="1" />
+        </if>
     </init>
     
     <sets>
@@ -31,7 +37,8 @@
             <neck>Bird Whistle</neck>
             <ear1>Melody Earring +1</ear1>
             <ear2>Melody Earring +1</ear2>
-            <body>Royal Cloak</body>
+            <head>Demon Helm</head>
+            <body>Kirin's Osode</body>
             <hands>Choral Cuffs</hands>
             <ring1>Angel's Ring</ring1>
             <ring2>Angel's Ring</ring2>
@@ -73,14 +80,14 @@
             <neck>Bird Whistle</neck>
             <ear1>Melody Earring +1</ear1>
             <ear2>Melody Earring +1</ear2>
-            <body>Savage Separates</body>
+            <body>Kirin's Osode</body>
             <hands>Choral Cuffs</hands>
             <ring1>Angel's Ring</ring1>
             <ring2>Angel's Ring</ring2>
             <back>Prism Cape</back>
             <waist>Corsette +1</waist>
             <legs>Errant Slops</legs>
-            <feet>Savage Gaiters</feet>
+            <feet>Dance Shoes</feet>
         </set>
 
         <set name="Singing" baseset="CHR">
@@ -96,6 +103,7 @@
         
         <set name="String" baseset="Singing">
             <body>Minstrel's Coat</body>
+            <feet>Bard's Slippers</feet>
         </set>
 
         <set name="Elegy" baseset="Wind"><range>Horn +1</range></set>
@@ -110,7 +118,7 @@
             <sub>Tortoise Shield</sub>
             <head>Zenith Crown</head>
             <neck>Holy Phial</neck>
-            <!-- <body>Errant Houppelande</body> -->
+            <body>Kirin's Osode</body>
             <hands>Devotee's Mitts</hands>
             <ring1>Saintly Ring</ring1>
             <ring2>Saintly Ring</ring2>
@@ -167,9 +175,19 @@
             <feet>Errant Pigaches</feet>
         </set>
 
+        <set name="LatentRefresh" baseset="Idle">
+            <head></head>
+            <body>Royal Cloak</body>
+        </set>
+
+        <set name="Town">
+            <head>Gala Corsage</head>
+        </set>
+        
     </sets>
 
     <variables>
+        <var name="mageSub">0</var>
         <var name="melee">0</var>
         <var name="string">0</var>
 
@@ -347,26 +365,33 @@
             </equip>
         </if>
 
-        <if p_status="resting">
-            <equip set="Resting" />
-        </if>
-        <elseif p_status="engaged">
+        <if p_status="engaged">
             <equip set="TP" />
-        </elseif>
+        </if>
         <else>
-            <equip set="Idle" />
+
+            <if p_status="Idle">
+                <if advanced="($mageSub)&(%p_mp<200)">
+                    <equip set="LatentRefresh" />
+                </if>
+                <else>
+                    <equip set="Idle" />
+                </else>
+            </if>
+            <elseif advanced="($mageSub)&(%p_status=resting)">
+                <equip set="Resting" />
+            </elseif>
 
             <!-- Town gear -->
-            <if e_area="*Bastok*|Metalworks|*d'Or*|*Windurst*|Heaven's Tower|*Jeuno|Ru'Lude Gardens|Selbina|Mhaura|Norg|Tavnazian Safehold|Al Zahbi|Aht Urgan Whitegate|Nashmau">
+            <if e_area="*Bastok*|Metalworks|*d'Or*|*Windurst*|Heaven's Tower|*Jeuno|Ru'Lude Gardens|Selbina|Mhaura|Norg|Rabao|Tavnazian Safehold|Al Zahbi|Aht Urgan Whitegate|Nashmau">
                 <if e_area="Dynamis*">
                     <return />
                 </if>
                 <!-- Vanity set -->
-                <!-- <equip set="Town" /> -->
+                <equip set="Town" />
                 <!-- Aketons -->
                 <if e_area="*Bastok*|Metalworks">
                     <equip>
-                        <head>Gala Corsage</head>
                         <body>Republic Aketon</body>
                     </equip>
                 </if>

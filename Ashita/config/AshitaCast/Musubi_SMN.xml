@@ -14,6 +14,8 @@
     <init>
         <command>/macro book 1</command>
         <command delay="1000">/macro set 1</command>
+        
+        <command delay="3000">/gl blink</command>
     </init>
     
     <sets>

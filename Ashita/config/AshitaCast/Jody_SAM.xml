@@ -17,19 +17,24 @@
             <command delay="1000">/macro set 1</command>
         </if>
         <elseif p_subjob="thf">
-            <command delay="1000">/macro set 1</command>
+            <command delay="1000">/macro set 2</command>
         </elseif>
         <elseif p_subjob="nin">
             <command delay="1000">/macro set 3</command>
         </elseif>
-        <command>/ac set defaultWeapons</command>
+
+        <command delay="3000">/gl blink</command>
+
+        <!-- Equip initial weapon set -->
+        <equip set="iWeapons" />
     </init>
 
     <sets>
-        <set name="defaultWeapons" baseset="Idle">
+        <set name="iWeapons">
             <main>Hagun</main>
             <sub>Mythril Grip +1</sub>
         </set>
+
         <set name="Idle">
             <head>Optical Hat</head>
             <neck>Evasion Torque</neck>
@@ -42,19 +47,10 @@
             <back>Bat Cape</back>
             <waist>Scouter's Rope</waist>
             <legs>Byakko's Haidate</legs>
-            <feet>Myochin Sune-Ate</feet>
+            <feet>Saotome Sune-Ate</feet>
         </set>
 
         <set name="Resting" baseset="Idle">
-        </set>
-
-        <set name="Town">
-            <main>Hagun</main>
-            <body>Hara-Ate +1</body>
-            <hands>Saotome Kote</hands>
-            <waist>Speed Belt</waist>
-            <legs>Myochin Haidate</legs>
-            <feet>Sune-Ate +1</feet>
         </set>
 
         <set name="TP">
@@ -110,7 +106,7 @@
         	<back>Amemet Mantle +1</back> <!-- Forager's -->
         	<waist>Ryl.Kgt. Belt</waist> <!-- Warwolf -->
         	<legs>Shura Haidate</legs>
-        	<feet>Dusk Ledelsens</feet>
+        	<feet>Saotome Sune-Ate</feet>
         </set>
 
         <set name="WS_Multihit" baseset="WS">
@@ -122,6 +118,7 @@
             <ring1>Sniper's Ring</ring1>
             <ring2>Sniper's Ring</ring2>
             <waist>Life Belt</waist>
+            <feet>Saotome Sune-Ate</feet>
         </set>
 
         <set name="Meditate">
@@ -139,6 +136,16 @@
             <waist>Corsette +1</waist>
             <feet>Myochin Sune-ate</feet>
         </set>
+
+        <set name="Town" baseset="TP">
+            <main>Hagun</main>
+            <head>Emperor Hairpin</head>
+            <body>Hara-Ate +1</body>
+            <hands>Saotome Kote</hands>
+            <waist>Speed Belt</waist>
+            <legs>Myochin Haidate</legs>
+            <feet>Sune-Ate +1</feet>
+        </set>
         
     </sets>
 
@@ -150,11 +157,6 @@
     </variables>
 
     <inputcommands>
-
-        <cmd input="/towngear">
-            <command>/ac naked</command>
-            <command delay="500">/ac enable</command>
-        </cmd>
 
     	<cmd input="/acc">
     		<if advanced="$acc=0">
@@ -267,6 +269,34 @@
         </elseif>
         <else>
             <equip set="Idle" />
+
+            <!-- Town gear -->
+            <if e_area="*Bastok*|Metalworks|*d'Or*|*Windurst*|Heaven's Tower|*Jeuno|Ru'Lude Gardens|Selbina|Mhaura|Norg|Rabao|Tavnazian Safehold|Al Zahbi|Aht Urgan Whitegate|Nashmau">
+                <if e_area="Dynamis*">
+                    <return />
+                </if>
+                <!-- Vanity set -->
+                <equip set="Town" />
+                <!-- Aketons -->
+                <!--
+                <if e_area="*Bastok*|Metalworks">
+                    <equip>
+                        <body>Republic Aketon</body>
+                    </equip>
+                </if>
+                <elseif e_area="*Windurst*|Heaven's Tower">
+                    <equip>
+                        <body>Federation Aketon</body>
+                    </equip>
+                </elseif>
+                <elseif e_area="*d'Or*">
+                    <equip>
+                        <body>Kingdom Aketon</body>
+                    </equip>
+                </elseif>
+                -->
+            </if>
+
         </else>
 
         <if buffactive="2|19">
