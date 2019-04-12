@@ -34,12 +34,12 @@
             <sub>Raptor Strap +1</sub>
             <range>San d'Orian Horn</range>
             <head></head>
-            <neck>Bird Whistle</neck>
+            <neck>Wind Torque</neck>
             <ear1>Melody Earring +1</ear1>
             <ear2>Melody Earring +1</ear2>
             <head>Demon Helm</head>
             <body>Kirin's Osode</body>
-            <hands>Choral Cuffs</hands>
+            <hands>Bard's Cuffs</hands>
             <ring1>Angel's Ring</ring1>
             <ring2>Angel's Ring</ring2>
             <back>Prism Cape</back>
@@ -134,7 +134,7 @@
             <ammo>Phtm. Tathlum</ammo>
             <ear1>Morion Earring</ear1>
             <ear2>Morion Earring</ear2>
-            <body>Shaman's Cloak</body>
+            <body>Kirin's Osode</body>
             <ring1>Eremite's Ring</ring1>
             <ring2>Eremite's Ring</ring2>
             <back>Prism Cape</back>
@@ -178,6 +178,14 @@
         <set name="LatentRefresh" baseset="Idle">
             <head></head>
             <body>Royal Cloak</body>
+        </set>
+
+        <set name="WS">
+            <body>Kirin's Osode</body>
+            <back>Amemet Mantle</back>
+            <waist>Tilt Belt</waist>
+            <legs>Choral Cannions</legs>
+            <feet>Savage Gaiters</feet>
         </set>
 
         <set name="Town">
@@ -345,6 +353,7 @@
     </jobability>
 
     <weaponskill>
+        <equip set="WS" />
     </weaponskill>
 
     <idlegear>
