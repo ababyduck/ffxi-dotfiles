@@ -47,7 +47,7 @@
         </set>
 
         <set name="TP" baseset="Idle">
-        	<head>Patroclus's Helm</head><!-- Walmart Turban -->
+        	<head>Walahra Turban</head>
         	<neck>Peacock Charm</neck>
         	<ear1>Suppanomimi</ear1>
         	<ear2>Optical Earring</ear2> <!-- Pixie -->

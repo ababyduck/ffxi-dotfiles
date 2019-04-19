@@ -292,9 +292,10 @@
                     <return />
                 </if>
                 <!-- Vanity set -->
-                <equip set="Town" />
+                <!-- <equip set="Town" /> -->
                 <!-- Aketons -->
                 <if e_area="*Bastok*|Metalworks">
+                    <equip set="Town" />
                     <equip>
                         <body>Republic Aketon</body>
                     </equip>

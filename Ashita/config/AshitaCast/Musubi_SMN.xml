@@ -96,14 +96,16 @@
         </set>
 
         <set name="MND">
-            <main>Chestnut Wand</main>
+            <main>Kirin's Pole</main>
+            <sub>Raptor Strap</sub>
             <ring1>Saintly Ring</ring1>
             <ring2>Saintly Ring</ring2>
             <back>Rainbow Cape</back>
         </set>
 
         <set name="INT">
-            <main>Chestnut Wand</main>
+            <main>Kirin's Pole</main>
+            <sub>Raptor Strap</sub>
             <ammo>Morion Tathlum</ammo>
             <ear1>Morion Earring</ear1>
             <ear2>Morion Earring</ear2>
